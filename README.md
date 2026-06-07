@@ -8,7 +8,7 @@
 
 Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
 
-### Kumpulan Skill yang Tersedia (15 Skills)
+### Kumpulan Skill yang Tersedia (16 Skills)
 
 #### 🚀 Orkestrator Utama (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 4 fase otomatis penuh secara sekuensial.
@@ -34,6 +34,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 12. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Mencari jurnal target terbaik berdasarkan kuartil, relevansi scope, biaya APC, dan turnaround time (bebas jurnal predator).
 13. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulasi peer review independen (Accept/Revision/Reject) dengan daftar masalah mayor/minor.
 14. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Memformulasikan draf jawaban diplomatis *Response to Reviewers* dan merencanakan revisi naskah secara konsisten.
+15. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Memparafrase dan menghumanisasi teks akademik secara struktural untuk menghindari plagiasi dan menjaga makna asli.
 
 ---
 
@@ -41,7 +42,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 
 This repository is a collection of custom **Skills** for **Research Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
 
-### Available Skills (15 Skills)
+### Available Skills (16 Skills)
 
 #### 🚀 Main Orchestrator (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 4-phase research workflow sequentially and automatically.
@@ -67,6 +68,7 @@ This repository is a collection of custom **Skills** for **Research Agents**. Th
 12. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Discovers ideal target journals by quartile, scope alignment, APC costs, and turnaround times, avoiding predatory venues.
 13. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulates peer reviews (Accept/Revision/Reject) with categorized major and minor concerns.
 14. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Drafts formal Responses to Reviewers and plans manuscript modifications consistently.
+15. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Paraphrases and humanizes academic texts using advanced structural rewriting to avoid plagiarism while preserving original meaning.
 
 ---
 
@@ -84,7 +86,7 @@ Seluruh skill ini memanfaatkan modul pencarian literatur bawaan sistem / All the
 ## Instalasi via Git & Prompt / Installation via Git & Prompt
 
 ### 🇮🇩 Bahasa Indonesia
-Anda dapat memasang seluruh 15 skill ini dengan melakukan kloning repositori dan menggunakan *prompt* kepada agen untuk memuatnya.
+Anda dapat memasang seluruh 16 skill ini dengan melakukan kloning repositori dan menggunakan *prompt* kepada agen untuk memuatnya.
 
 1.  **Kloning Repositori**:
     Jalankan perintah berikut di terminal Anda:
@@ -100,7 +102,7 @@ Anda dapat memasang seluruh 15 skill ini dengan melakukan kloning repositori dan
 ---
 
 ### 🇬🇧 English
-You can install all 15 skills by cloning the repository and using a prompt to instruct the agent to load them.
+You can install all 16 skills by cloning the repository and using a prompt to instruct the agent to load them.
 
 1.  **Clone the Repository**:
     Run the following command in your terminal:
