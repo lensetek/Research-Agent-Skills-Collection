@@ -17,7 +17,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 ### Kumpulan Skill yang Tersedia (16 Skills)
 
 #### 🚀 Orkestrator Utama (Starter Skill)
-*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 4 fase otomatis penuh secara sekuensial.
+*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 5 fase otomatis penuh (termasuk personalisasi implisit) secara sekuensial.
 
 #### 📁 Fase 1 — Discovery & Framing (Masalah)
 1.  **[discover-phenomenon-and-gap](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/discover_phenomenon_and_gap/SKILL.md)**: Eksplorasi tren fenomena baru, anomali, dan pemetaan celah ilmiah (*research gap*) formal.
@@ -51,7 +51,7 @@ This repository is a collection of custom **Skills** for **Research Agents**. Th
 ### Available Skills (16 Skills)
 
 #### 🚀 Main Orchestrator (Starter Skill)
-*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 4-phase research workflow sequentially and automatically.
+*   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 5-phase research workflow sequentially and automatically (including implicit personalization).
 
 #### 📁 Phase 1 — Discovery & Framing (Problem Framing)
 1.  **[discover-phenomenon-and-gap](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/discover_phenomenon_and_gap/SKILL.md)**: Explores new phenomenon trends, anomalies, and maps formal academic research gaps.
@@ -126,13 +126,22 @@ You can install all 16 skills by cloning the repository and using a prompt to in
 ## Cara Menggunakan Skill / How to Use the Skills
 
 ### 🚀 1. Alur Orkestrasi Otomatis (Automatic Orchestration Flow - RECOMMENDED)
+
+#### 🇮🇩 Bahasa Indonesia
 Untuk memulai seluruh alur penelitian otomatis dari satu pintu masuk, jalankan skill **`research-orchestrator`** dengan memberikan topik atau domain riset Anda.
 
 > **ID**: *"Gunakan skill **research-orchestrator** untuk memulai riset otomatis penuh tentang efektivitas Graph Neural Networks dalam fraud detection transaksi keuangan."*
->
+
+Setelah diaktifkan, agen akan menjalankan Fase 1 hingga Fase 5 secara otomatis dan memberikan keluaran akhir berupa **Integrated Research Dashboard** serta pembaruan profil personal (`user_profile.json`).
+
+---
+
+#### 🇬🇧 English
+To start the entire automated research workflow from a single entry point, run the **`research-orchestrator`** skill by providing your research topic or domain.
+
 > **EN**: *"Use the **research-orchestrator** skill to start a full automatic research flow on the effectiveness of Graph Neural Networks for financial transaction fraud detection."*
 
-Setelah diaktifkan, agen akan menjalankan Fase 1 hingga Fase 4 secara otomatis dan memberikan keluaran akhir berupa **Integrated Research Dashboard**.
+Once activated, the agent will run Phase 1 to Phase 5 automatically and provide the final output in the form of an **Integrated Research Dashboard** and personal profile updates (`user_profile.json`).
 
 ---
 
