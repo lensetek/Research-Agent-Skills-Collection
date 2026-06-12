@@ -136,3 +136,17 @@ Anda juga dapat memicu setiap skill secara terpisah menggunakan perintah berbaha
 > **ID**: *"Gunakan skill **academic-peer-reviewer** untuk meninjau draf paper ini secara kritis."*
 >
 > **EN**: *"Use the **academic-peer-reviewer** skill to critically review this manuscript draft."*
+
+---
+
+## Personalization & Memori Riset / Personalization & Research Memory
+
+### 🇮🇩 Bahasa Indonesia
+Sistem ini mendukung **Implicit Personalization** secara otomatis:
+* **Membaca Profil**: Di awal eksekusi `research-orchestrator`, agen akan mencari dan memuat preferensi dari berkas `user_profile.json` di root direktori (jika ada).
+* **Belajar secara Implisit**: Di akhir sesi, agen akan menganalisis percakapan/umpan balik Anda secara otomatis dan memperbarui berkas `user_profile.json` agar sesi berikutnya semakin pintar dan terpersonalisasi.
+
+### 🇬🇧 English
+This system automatically supports **Implicit Personalization**:
+* **Load Profile**: At the start of `research-orchestrator` execution, the agent looks for and loads preferences from `user_profile.json` at the root directory (if present).
+* **Implicit Learning**: At the end of the session, the agent analyzes your conversation/feedback and automatically updates `user_profile.json` to make subsequent sessions smarter and more personalized.
