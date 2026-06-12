@@ -102,11 +102,15 @@ Anda dapat memasang seluruh skill ini secara langsung menggunakan perintah/promp
 
 1. **Prompt Instalasi**:
    Kirimkan perintah (*prompt*) berikut ke agen Anda untuk mengunduh dan memasang repositori:
-   > *"Tolong download dan install agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection"*
+   ```text
+   Tolong download dan install agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection
+   ```
 
 2. **Konfirmasi Pemasangan**:
    Kirimkan perintah (*prompt*) berikut untuk memverifikasi jumlah skill yang terpasang di proyek ini:
-   > *"Konfirmasi berapa agent skill yang ada di project ini?"*
+   ```text
+   Konfirmasi berapa agent skill yang ada di project ini?
+   ```
 
 ---
 
@@ -115,11 +119,15 @@ You can install all these skills directly using prompt commands to your agent:
 
 1. **Installation Prompt**:
    Send the following prompt to your agent to download and install the repository:
-   > *"Please download and install the agent skills from the URL https://github.com/lensetek/Research-Agent-Skills-Collection"*
+   ```text
+   Please download and install the agent skills from the URL https://github.com/lensetek/Research-Agent-Skills-Collection
+   ```
 
 2. **Installation Confirmation**:
    Send the following prompt to verify the number of installed skills in this project:
-   > *"Confirm how many agent skills are in this project?"*
+   ```text
+   Confirm how many agent skills are in this project?
+   ```
 
 ---
 
