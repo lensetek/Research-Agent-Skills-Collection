@@ -1,19 +1,36 @@
 ---
 name: academic_paraphraser
-description: Skill for smart paraphrasing and humanizing academic texts. Uses advanced structural rewriting (splitting, merging, expanding) to avoid plagiarism and improve clarity while preserving the original meaning.
+description: Skill ultra-advance untuk memparafrase dan menghumanisasi teks akademik guna menghindari deteksi AI (Anti-AI Detector) dan plagiasi, dengan memanipulasi perplexity dan burstiness.
 ---
 
-# Academic Paraphraser & Humanizer
+# Advanced Academic Paraphraser & Anti-AI Humanizer
 
-When a user asks to paraphrase a paragraph, sentence, or section from a paper, follow these steps to produce a highly intelligent, human-like output:
+## Overview
+Skill ini dirancang untuk memparafrase literatur ilmiah sekaligus bertindak sebagai pelindung dari algoritma pendeteksi tulisan AI (seperti Turnitin AI, GPTZero, Originality.ai). Agen **DIWAJIBKAN** untuk tidak sekadar menulis ulang, melainkan menginjeksi metrik *Perplexity* (ketidaktebakan kosakata) dan *Burstiness* (variasi panjang kalimat) tingkat tinggi agar tulisan 100% terbaca seperti manusia (*Human-written*).
 
-1. **Understand the Core Meaning**: Identify the main ideas, empirical findings, and specific terminology that must be strictly preserved.
-2. **Advanced Structural Rewriting (Do NOT just swap synonyms)**:
-   - **Split Complex Sentences**: If the original sentence is too long or convoluted, break it into two or more distinct, clear sentences for better readability.
-   - **Merge Short Sentences**: Combine fragmented sentences to create a smoother, cohesive academic flow.
-   - **Expand and Elaborate**: Unpack dense concepts by slightly expanding the sentence to make the underlying logic clearer to the reader.
-   - **Shift Perspectives**: Completely alter the syntactic structure (e.g., change active to passive, or change the primary subject of the sentence).
-3. **Maintain Academic Tone**: Ensure the language remains formal, objective, and appropriate for high-tier scientific literature. Avoid colloquialisms.
-4. **Humanize the Text**: Avoid rigid, robotic, or overly predictable "AI-like" phrasing. Ensure the sentence flow feels natural, engaging, and indistinguishable from a top-tier human researcher.
-5. **Guarantee Plagiarism Evasion**: Ensure the new text is structurally and lexically distinct enough from the original to comfortably pass Turnitin or similar plagiarism checkers.
-6. **Add Citation Placeholder**: Remind the user to add the proper citation at the end of the paraphrased text (e.g., `[Author, Year]`).
+## Ultra-Advanced Humanization Techniques (WAJIB DIPATUHI)
+
+### 1. Manipulasi Burstiness (Variasi Panjang Kalimat yang Ekstrem)
+AI secara natural menulis kalimat dengan panjang dan ritme yang konstan. Untuk mengelabui detektor:
+- **Ciptakan asimetri**: Kombinasikan 1-2 kalimat majemuk bertingkat yang sangat panjang (25+ kata) dengan 1 kalimat deklaratif yang sangat pendek dan lugas (5-8 kata) tepat setelahnya.
+- Hindari struktur paralel yang terlalu sempurna dan seragam antar paragraf.
+
+### 2. Injeksi Perplexity (Ketidaktebakan Leksikal)
+Algoritma AI pendeteksi bekerja dengan mencari kata yang paling probabel. 
+- Jangan gunakan kombinasi kata yang klise. Gunakan frasa akademik tingkat lanjut yang spesifik (bukan umum).
+- Ubah struktur transisi: Alih-alih menggunakan di awal kalimat ("However," / "Furthermore,"), sematkan transisi di tengah klausa (contoh: *"The results, however, indicate..."*).
+
+### 3. Blacklist Kosakata Khas AI (Banned Words)
+**DILARANG KERAS** menggunakan kata-kata/frasa berikut yang merupakan "sidik jari" LLM:
+- *Delve, multifaceted, intricate, testament, tapestry, symphony, crucial, pivotal, essentially, ultimately, it is important to note, seamless, robust, dynamic.*
+
+### 4. Fragmentasi Logika (Human-Like Cognitive Flow)
+Manusia seringkali menulis dengan alur berpikir yang melompat dari fakta spesifik ke observasi makro tanpa transisi formal yang kaku. 
+- Buat klausa yang sedikit tidak seimbang (tetapi tetap gramatikal) untuk membedakannya dari sintaksis robotik yang selalu memiliki format Subjek-Predikat-Objek sempurna.
+- Sesekali ubah bentuk kalimat aktif dan pasif secara sporadis dan tidak berpola di dalam satu paragraf.
+
+## Workflow Execution
+1. **Identifikasi Konsep Inti**: Baca teks asli dan pahami temuan objektif atau variabelnya (jangan sampai mengubah data/fakta ilmiah).
+2. **De-AI Process**: Hapus seluruh struktur khas AI. 
+3. **Rewrite & Inject**: Tulis ulang dengan menerapkan *Burstiness* tinggi, *Perplexity* mendalam, dan *Lexical Asymmetry*.
+4. **Verifikasi Tone**: Pastikan teks terdengar seperti tulisan peneliti senior (Q1 Journal Standard) yang natural, bukan robot, dan cantumkan placeholder sitasi (contoh: `[Author, Year]`).
