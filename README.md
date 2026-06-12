@@ -95,37 +95,31 @@ Seluruh skill ini memanfaatkan modul pencarian literatur bawaan sistem / All the
 
 ---
 
-## Instalasi via Git & Prompt / Installation via Git & Prompt
+## Instalasi via Prompt / Installation via Prompt
 
 ### 🇮🇩 Bahasa Indonesia
-Anda dapat memasang seluruh 16 skill ini dengan melakukan kloning repositori dan menggunakan *prompt* kepada agen untuk memuatnya.
+Anda dapat memasang seluruh skill ini secara langsung menggunakan perintah/prompt kepada agen Anda:
 
-1.  **Kloning Repositori**:
-    Jalankan perintah berikut di terminal Anda:
-    ```bash
-    git clone https://github.com/lensetek/Research-Agent-Skills-Collection.git
-    ```
-    *(Atau gunakan `git pull` jika Anda sudah pernah melakukan kloning sebelumnya).*
+1. **Prompt Instalasi**:
+   Kirimkan perintah (*prompt*) berikut ke agen Anda untuk mengunduh dan memasang repositori:
+   > *"Tolong download dan install agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection"*
 
-2.  **Gunakan Prompt**:
-    Berikan instruksi (*prompt*) berikut kepada agen Anda:
-    > *"Tolong baca folder skill dari repositori yang baru saja saya clone, lalu muat dan daftarkan seluruh skill tersebut ke dalam sistem Anda."*
+2. **Konfirmasi Pemasangan**:
+   Kirimkan perintah (*prompt*) berikut untuk memverifikasi jumlah skill yang terpasang di proyek ini:
+   > *"Konfirmasi berapa agent skill yang ada di project ini?"*
 
 ---
 
 ### 🇬🇧 English
-You can install all 16 skills by cloning the repository and using a prompt to instruct the agent to load them.
+You can install all these skills directly using prompt commands to your agent:
 
-1.  **Clone the Repository**:
-    Run the following command in your terminal:
-    ```bash
-    git clone https://github.com/lensetek/Research-Agent-Skills-Collection.git
-    ```
-    *(Or use `git pull` if you have previously cloned it).*
+1. **Installation Prompt**:
+   Send the following prompt to your agent to download and install the repository:
+   > *"Please download and install the agent skills from the URL https://github.com/lensetek/Research-Agent-Skills-Collection"*
 
-2.  **Use Prompt**:
-    Give the following prompt to your agent:
-    > *"Please read the skills folder from the newly cloned repository, then load and register all the skills into your system."*
+2. **Installation Confirmation**:
+   Send the following prompt to verify the number of installed skills in this project:
+   > *"Confirm how many agent skills are in this project?"*
 
 ---
 
