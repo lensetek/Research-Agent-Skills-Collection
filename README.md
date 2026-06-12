@@ -4,6 +4,12 @@
 
 ---
 
+### 🔥 What's New / Yang Baru (June 2026)
+* **🇮🇩 Fitur Personalisasi Implisit Baru**: Ditambahkan Fase 5 ke dalam `research-orchestrator`. Agen sekarang secara otomatis membaca preferensi Anda dari `user_profile.json` di awal sesi dan merekam umpan balik Anda secara implisit ke dalam file tersebut di akhir sesi agar riset berikutnya berjalan lebih cerdas.
+* **🇬🇧 New Implicit Personalization Feature**: Added Phase 5 to the `research-orchestrator`. The agent now automatically loads your preferences from `user_profile.json` at the start of a session and implicitly records your feedback back into the file at the end of the session to make subsequent runs smarter.
+
+---
+
 ## Bahasa Indonesia
 
 Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
