@@ -5,6 +5,8 @@
 ---
 
 ### 🔥 What's New / Yang Baru (June 2026)
+* **🇮🇩 2 Skill Data Baru**: Ditambahkan `data-acquisition-specialist` untuk akuisisi/scraping data, dan `data-scientist-analyst` untuk olah data statistik/ML pada Fase 2. `research-orchestrator` telah diperbarui untuk mendukung alur kerja 20 skill.
+* **🇬🇧 2 New Data Skills**: Added `data-acquisition-specialist` for data acquisition/scraping, and `data-scientist-analyst` for statistical/ML data processing in Phase 2. `research-orchestrator` has been updated to support the 20-skill workflow.
 * **🇮🇩 Fitur Personalisasi Implisit Baru**: Ditambahkan Fase 5 ke dalam `research-orchestrator`. Agen sekarang secara otomatis membaca preferensi Anda dari `user_profile.json` di awal sesi dan merekam umpan balik Anda secara implisit ke dalam file tersebut di akhir sesi agar riset berikutnya berjalan lebih cerdas.
 * **🇬🇧 New Implicit Personalization Feature**: Added Phase 5 to the `research-orchestrator`. The agent now automatically loads your preferences from `user_profile.json` at the start of a session and implicitly records your feedback back into the file at the end of the session to make subsequent runs smarter.
 
