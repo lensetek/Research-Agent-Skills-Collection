@@ -5,6 +5,8 @@
 ---
 
 ### 🔥 What's New / Yang Baru (June 2026)
+* **🇮🇩 Upgrade Skill Eksplorasi Celah (Gap)**: `discover-phenomenon-and-gap` kini menggunakan strategi *Survey of Surveys* dan *Batch Processing* untuk mensintesis ide dari ratusan paper tanpa token limit, serta dilengkapi indikator *Skala Kesulitan*.
+* **🇬🇧 Gap Exploration Skill Upgrade**: `discover-phenomenon-and-gap` now utilizes *Survey of Surveys* and *Batch Processing* strategies to synthesize ideas from hundreds of papers without token limits, complete with a *Difficulty Scale* indicator.
 * **🇮🇩 Keamanan Anti-Halusinasi Global**: Diterapkan kebijakan *Zero-Tolerance* terhadap data/paper fiktif di seluruh agen (Orkestrator, Akuisisi Data, Ekstraksi Metodologi, dan Matriks) untuk menjamin integritas riset.
 * **🇬🇧 Global Anti-Hallucination Security**: Enforced a Zero-Tolerance policy against fake data/papers across all agents (Orchestrator, Data Acquisition, Extract Methodology, and Matrix Builder) to ensure research integrity.
 * **🇮🇩 Upgrade Skill SLR (PRISMA Funnel)**: `literature-review-generator` kini mengintegrasikan alur kerja PRISMA 4-tahap dengan filter otomatis Python dan checkpoint CSV untuk menangani ribuan paper.
