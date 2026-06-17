@@ -5,6 +5,8 @@
 ---
 
 ### 🔥 What's New / Yang Baru (June 2026)
+* **🇮🇩 Keamanan Anti-Halusinasi Global**: Diterapkan kebijakan *Zero-Tolerance* terhadap data/paper fiktif di seluruh agen (Orkestrator, Akuisisi Data, Ekstraksi Metodologi, dan Matriks) untuk menjamin integritas riset.
+* **🇬🇧 Global Anti-Hallucination Security**: Enforced a Zero-Tolerance policy against fake data/papers across all agents (Orchestrator, Data Acquisition, Extract Methodology, and Matrix Builder) to ensure research integrity.
 * **🇮🇩 Upgrade Skill SLR (PRISMA Funnel)**: `literature-review-generator` kini mengintegrasikan alur kerja PRISMA 4-tahap dengan filter otomatis Python dan checkpoint CSV untuk menangani ribuan paper.
 * **🇬🇧 SLR Skill Upgrade (PRISMA Funnel)**: `literature-review-generator` now integrates a 4-step PRISMA workflow with automated Python filtering and CSV checkpoints to handle thousands of papers.
 * **🇮🇩 1 Skill Validator Baru**: Ditambahkan `model-evaluator-validator` (Fase 2) untuk menguji signifikansi statistik (T-Test, Diebold-Mariano) dari hasil prediksi model. Total skill kini menjadi 22.
