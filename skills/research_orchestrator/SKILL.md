@@ -61,7 +61,7 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 9.  Jalankan `model-evaluator-validator` secara wajib untuk melakukan uji signifikansi statistik (misal: T-test, Diebold-Mariano) pada hasil prediksi model guna menguji validitas dan komparasi performanya.
 
 ### Fase 3: Kajian & Validasi Literatur
-10. Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru.
+10. Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru. Khusus mode SLR berskala besar, agen wajib mematuhi alur PRISMA 4-tahap (Tarik Metadata -> Filter Python -> Semantic Audit -> Ekstrak) dan menyimpan *checkpoint* `.csv` di tiap langkah.
 11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama hasil pencarian.
 12. Jalankan `source_quality_appraiser` untuk mengaudit tingkat kredibilitas jurnal rujukan (kuartil Scopus/CORE ranking) guna menyaring paper yang lemah metodologinya.
 13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual oleh paper referensi (bebas halusinasi sitasi).
