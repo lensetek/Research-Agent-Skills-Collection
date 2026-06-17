@@ -25,10 +25,19 @@ Contoh penggunaan:
 ### 1. Perencanaan Protokol Review & Penentuan Mode
 Tentukan batasan review (rentang tahun, tipe dokumen) dan pilih salah satu mode kerja berikut:
 - **Narrative Literature Review Mode**: Untuk proposal konseptual atau penyusunan bab teori umum.
-- **Systematic Literature Review (SLR) Mode**: Menggunakan kriteria inklusi-eksklusi formal, penentuan kata kunci/query database terstruktur, dokumentasi proses pencarian/screening (misal: diagram PRISMA sederhana), dan tabel ekstraksi data komprehensif.
+- **Systematic Literature Review (SLR) Mode**: Diwajibkan untuk riset berskala besar (>100 paper). Menggunakan kriteria inklusi-eksklusi formal, skrip penyaringan otomatis, dan alur PRISMA 4-tahap yang dicatat ke dalam *checkpoint* CSV (Lihat bagian khusus Alur PRISMA di bawah).
 - **Thematic Review Mode**: Mengelompokkan paper berdasarkan tema, konsep, atau sub-topik masalah.
 - **Chronological Review Mode**: Menelusuri sejarah perkembangan ide/teknologi dari pionir awal hingga tren termutakhir untuk menunjukkan evolusi paradigma.
 - **Critical Review Mode**: Berfokus mengevaluasi kelemahan asumsi teoretis, kelemahan evaluasi, bias data, dan keterbatasan metodologis dari studi sebelumnya.
+
+### 1.5. Alur Kerja PRISMA & Checkpointing (Khusus SLR Mode Skala Besar)
+Jika mode **Systematic Literature Review (SLR)** dipilih untuk menangani pencarian dalam jumlah besar (ribuan paper), agen WAJIB menggunakan metode penyaringan programatik (*Programmatic Screening*) untuk menghindari ekskusi manual LLM yang memboroskan token. Alur 4 tahap ini harus dipatuhi dan disimpan dalam berkas CSV (*checkpoint*):
+
+1. **Identification (Tarik Metadata)**: Panggil API mesin pencari (`literature-search-openalex`, dll.) untuk HANYA mengambil metadata (Judul, Abstrak, Penulis, Tahun, DOI) dari ribuan hasil. DILARANG MENGUNDUH TEKS PENUH. Simpan luaran mentah ke `prisma_1_identification.csv`.
+2. **Automated Screening (Python Filter)**: Tulis dan jalankan skrip Python (menggunakan Pandas) untuk menyaring `prisma_1_identification.csv`. Buang duplikat, batasi rentang tahun, dan eliminasi paper yang teks judul/abstraknya sama sekali tidak mengandung kata kunci utama. Simpan sisa paper yang lolos seleksi otomatis ke `prisma_2_screened.csv`.
+3. **Eligibility (Semantic & Quality Audit)**: Untuk kumpulan paper yang tersisa (50-100 paper), gunakan LLM untuk membaca abstrak guna memastikan relevansi semantik terhadap *Inclusion/Exclusion criteria*. Gunakan agen `source-quality-appraiser` untuk membuang paper berpemeringkatan rendah/predator. Simpan paper yang benar-benar relevan ke `prisma_3_eligible.csv`.
+4. **Included (Ekstraksi Teks Penuh)**: Unduh PDF/teks penuh hanya dari kumpulan akhir (e.g. 20-40 paper) dan gunakan `extract-methodology` untuk membedah parameternya. Simpan matriks sintesis akhir ke `prisma_4_included.csv`.
+5. **Diagram PRISMA**: Agen diwajibkan untuk menutup tahapan ini dengan men-generate diagram alir (Flowchart) PRISMA visual dalam format **Mermaid diagram**, yang menunjukkan penyusutan jumlah paper (n) di setiap tahap (Identification -> Screening -> Eligibility -> Included).
 
 ### 2. Penelusuran & Pemetaan Historis (Timeline)
 - Cari literatur pionir (seminal papers) dan paper ulasan (survey papers) terbaru menggunakan mesin pencari literatur.
