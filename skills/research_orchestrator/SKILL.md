@@ -55,7 +55,7 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 
 ### Fase 1: Eksplorasi & Pembingkaian Masalah
 1.  Terima topik/ide awal dari pengguna.
-2.  Jalankan `discover-phenomenon-and-gap` untuk memetakan fenomena tren terbaru dan merumuskan celah ilmiah (*research gap*) konkret.
+2.  Jalankan `discover-phenomenon-and-gap` untuk memetakan fenomena tren terbaru (melalui *Survey of Surveys*) dan merumuskan celah ilmiah (*research gap*) konkret. **PENTING:** Evaluasi indikator "Skala Kesulitan" (Trivial/Moderate/Hardcore) yang dihasilkan agen tersebut, dan laporkan kepada pengguna untuk meminta persetujuan sebelum melanjutkan riset ke langkah berikutnya.
 3.  Kirimkan hasil gap tersebut ke `research-question-builder` untuk merumuskan Pertanyaan Penelitian (RQ), Tujuan, dan Kontribusi riset.
 4.  Kirimkan hasil RQ ke `hypothesis-or-proposition-builder` untuk merancang kerangka konseptual teoretis serta hipotesis/proposisi yang akan diuji.
 
