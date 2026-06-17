@@ -12,7 +12,7 @@ Skill ini adalah pintu masuk utama (*starter/entry point*) untuk mengotomatiskan
 Secara khusus, skill ini mendukung **Implicit Personalization**. Di awal eksekusi, agen wajib memeriksa keberadaan berkas `user_profile.json` di root direktori untuk memuat preferensi pengguna. Di akhir eksekusi, agen akan menganalisis umpan balik pengguna dan memperbarui berkas tersebut secara otomatis.
 
 ## Dependencies
-Skill ini mengoordinasikan eksekusi dari 17 skill berikut:
+Skill ini mengoordinasikan eksekusi dari 18 skill berikut:
 1. `discover-phenomenon-and-gap`
 2. `research-question-builder`
 3. `hypothesis-or-proposition-builder`
@@ -20,16 +20,17 @@ Skill ini mengoordinasikan eksekusi dari 17 skill berikut:
 5. `synthetic-data-generator`
 6. `data-acquisition-specialist`
 7. `data-scientist-analyst`
-8. `literature-review-generator`
-9. `extract-methodology`
-10. `source-quality-appraiser`
-11. `citation-and-reference-validator`
-12. `paper-matrix-builder`
-13. `synthesize-research`
-14. `patent-and-literature-matcher`
-15. `journal-recommendation-finder`
-16. `academic-peer-reviewer`
-17. `reviewer-response-and-revision`
+8. `model-evaluator-validator`
+9. `literature-review-generator`
+10. `extract-methodology`
+11. `source-quality-appraiser`
+12. `citation-and-reference-validator`
+13. `paper-matrix-builder`
+14. `synthesize-research`
+15. `patent-and-literature-matcher`
+16. `journal-recommendation-finder`
+17. `academic-peer-reviewer`
+18. `reviewer-response-and-revision`
 
 ## Quick Start
 Contoh penggunaan:
@@ -57,24 +58,25 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 6.  Jalankan `synthetic-data-generator` (jika dibutuhkan) untuk meng-generate dataset sintetis kuantitatif/kualitatif dengan mensimulasikan persona responden.
 7.  Jalankan `data-acquisition-specialist` (sebagai opsi/pelengkap) untuk mencari, mengumpulkan, menyedot (*scraping*), atau mengunduh dataset asli dari sumber internet/API.
 8.  Jalankan `data-scientist-analyst` untuk melakukan pembersihan data (*preprocessing*), analisis statistik, melatih model Machine Learning, serta memvisualisasikan hasil eksperimen.
+9.  Jalankan `model-evaluator-validator` secara wajib untuk melakukan uji signifikansi statistik (misal: T-test, Diebold-Mariano) pada hasil prediksi model guna menguji validitas dan komparasi performanya.
 
 ### Fase 3: Kajian & Validasi Literatur
-9.  Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru.
-10. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama hasil pencarian.
-11. Jalankan `source_quality_appraiser` untuk mengaudit tingkat kredibilitas jurnal rujukan (kuartil Scopus/CORE ranking) guna menyaring paper yang lemah metodologinya.
-12. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual oleh paper referensi (bebas halusinasi sitasi).
-13. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
+10. Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru.
+11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama hasil pencarian.
+12. Jalankan `source_quality_appraiser` untuk mengaudit tingkat kredibilitas jurnal rujukan (kuartil Scopus/CORE ranking) guna menyaring paper yang lemah metodologinya.
+13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual oleh paper referensi (bebas halusinasi sitasi).
+14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
 
 ### Fase 4: Sintesis & Kesiapan Publikasi
-14. Jalankan `synthesize-research` untuk menyatukan seluruh bukti temuan literatur, memetakan konsensus, serta mengulas kontradiksi secara kritis.
-15. Jalankan `patent-and-literature-matcher` untuk memverifikasi kebaruan (*novelty*) klaim invensi terhadap potensi *prior art*.
-16. Jalankan `journal-recommendation-finder` untuk memberikan rekomendasi target jurnal ilmiah (Q1-Q4) yang paling cocok dengan ruang lingkup riset.
-17. Jalankan `academic-peer-reviewer` untuk mensimulasikan proses penelaahan sejawat (*peer review*) guna memberikan penilaian kritis, daftar masalah (mayor/minor), serta rekomendasi kelayakan publikasi sebelum dikirim ke jurnal resmi.
-18. (Opsional/Jika ada perbaikan) Jalankan `reviewer-response-and-revision` untuk membimbing langkah-langkah revisi naskah.
+15. Jalankan `synthesize-research` untuk menyatukan seluruh bukti temuan literatur, memetakan konsensus, serta mengulas kontradiksi secara kritis.
+16. Jalankan `patent-and-literature-matcher` untuk memverifikasi kebaruan (*novelty*) klaim invensi terhadap potensi *prior art*.
+17. Jalankan `journal-recommendation-finder` untuk memberikan rekomendasi target jurnal ilmiah (Q1-Q4) yang paling cocok dengan ruang lingkup riset.
+18. Jalankan `academic-peer-reviewer` untuk mensimulasikan proses penelaahan sejawat (*peer review*) guna memberikan penilaian kritis, daftar masalah (mayor/minor), serta rekomendasi kelayakan publikasi sebelum dikirim ke jurnal resmi.
+19. (Opsional/Jika ada perbaikan) Jalankan `reviewer-response-and-revision` untuk membimbing langkah-langkah revisi naskah.
 
 ### Fase 5: Pembaruan Profil & Memori Riset (Implicit Personalization)
-19. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
-20. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
+20. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
+21. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
 
 ## Format Output: Integrated Research Dashboard
 Di akhir pengerjaan, agen harus menyajikan ringkasan eksekutif satu halaman yang memuat:
