@@ -48,7 +48,7 @@ Ekstrak informasi secara presisi ke dalam tabel Markdown atau skema JSON yang me
 
 ## Common Mistakes & Aturan Kritis (Anti-Halusinasi)
 - **Hanya Membaca Abstrak**: Abstrak jarang memuat detail teknis. Agen wajib menelusuri isi utama paper.
-- **Klaim Tanpa Bukti & Halusinasi Parameter**: 
+- **Klaim Tanpa Bukti & Halusinasi Parameter (FATAL)**: Dilarang keras mengarang nilai teknis!
   - Jika suatu hyperparameter tidak disebutkan di paper, wajib menuliskan **"tidak dilaporkan"** (jangan mengarang nilai atau menggunakan nilai default umum).
   - Jika dataset tidak jelas, wajib menuliskan **"tidak dijelaskan secara eksplisit"**.
   - Jika hasil performa disajikan dalam bentuk grafik tanpa angka tabel yang jelas, wajib menuliskan bahwa nilai tersebut ditaksir secara visual dari grafik dan sebutkan estimasi rentangnya.

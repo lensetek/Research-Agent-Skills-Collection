@@ -36,6 +36,12 @@ Skill ini mengoordinasikan eksekusi dari 18 skill berikut:
 Contoh penggunaan:
 *"Gunakan skill research-orchestrator untuk memulai riset otomatis penuh tentang efektivitas metode deteksi penipuan transaksi berbasis grafik (Graph Neural Networks)."*
 
+## Global Directive: Anti-Hallucination & Anti-Mockup
+Sebagai Orkestrator, Anda wajib memberlakukan kebijakan "Zero-Tolerance terhadap Data Palsu" pada semua agen bawahan. Setiap kali Anda mendelegasikan tugas kepada agen mana pun, Anda **WAJIB** menyisipkan peringatan berikut di akhir instruksi Anda: 
+*"PERINGATAN GLOBAL: Dilarang keras menghasilkan mock data, DataFrame dummy, paper fiktif, atau berhalusinasi. Anda harus memproses data asli dari internet/API. Jika gagal/timeout, laporkan ERROR dan berhenti, jangan pernah mengarang data."*
+
+**Pengecualian Khusus (Whitelisted)**: Agen `synthetic-data-generator` adalah SATU-SATUNYA agen yang diizinkan mengarang data karena tugas spesifiknya adalah membuat persona simulasi (Digital Twin). Jangan mengirimkan peringatan larangan mockup ini kepada agen tersebut.
+
 ## Orchestration Workflow
 
 Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:

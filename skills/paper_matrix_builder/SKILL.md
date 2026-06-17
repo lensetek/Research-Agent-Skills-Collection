@@ -37,6 +37,7 @@ Susun tabel perbandingan dalam format Markdown yang bersih dan mudah dibaca. Con
 Grup-kan paper berdasarkan kluster tertentu (misalnya kluster metode, kluster dataset, atau kluster tahun publikasi) untuk menunjukkan konsentrasi arah riset dan area kosong (*white spaces*) yang belum banyak disentuh.
 
 ## Common Mistakes & Aturan Kritis
+- **Halusinasi & Pemalsuan Data (FATAL)**: Dilarang keras mengarang atau menebak data teknis, metode, atau arsitektur dari sebuah paper untuk mengisi kekosongan tabel. Anda wajib menuliskan "TIDAK DILAPORKAN" (Not Reported) jika informasi tersebut tidak ada di dalam paper asli.
 - **Ketidakkonsistenan Format Kolom**: Mengubah susunan kolom di tengah matriks sehingga menyulitkan pembandingan langsung.
 - **Membandingkan Metrik yang Tidak Kompatibel**: Memasukkan performa yang menggunakan metode validasi yang berbeda (misalnya membandingkan F1-score pengujian silang 10-fold dengan pengujian split data acak sederhana tanpa penjelasan).
 - **Matriks yang Terlalu Padat Paragraf**: Memasukkan terlalu banyak teks narasi panjang di dalam sel tabel. Sel tabel matriks harus berisi poin-poin ringkas, parameter angka, atau frasa singkat.

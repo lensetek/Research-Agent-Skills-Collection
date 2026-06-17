@@ -23,6 +23,7 @@ Sesuai arahan pengguna, agen dibekali **kebebasan penuh** dalam mengimplementasi
 2. **Dynamic Content Handling**: Jika data dimuat secara dinamis via JavaScript, wajib menggunakan *headless browser* (seperti Selenium) daripada parser HTML statis.
 3. **Structured Storage**: Data hasil ekstraksi/scraping wajib disimpan secara rapi di dalam direktori proyek dalam format terstruktur: `.csv`, `.json`, atau database `.sqlite` (disesuaikan dengan ukuran data).
 4. **Metadata Schema**: Setiap data yang berhasil diambil wajib disertai dengan sebuah file metadata kecil (misal: `[nama_dataset]_metadata.json`) yang mendokumentasikan:
+5. **Anti-Hallucination & Anti-Mockup (FATAL)**: Dilarang keras membuat atau menghasilkan file CSV/JSON dummy/fiktif menggunakan kode statis (seperti membuat DataFrame buatan sendiri). Anda wajib menarik data sungguhan dari web/API yang dituju. Jika akses terblokir atau data gagal diekstrak, laporkan ERROR kepada pengguna dan hentikan proses.
    - Sumber URL asal.
    - Tanggal pengambilan data.
    - Penjelasan skema kolom/data.
