@@ -8,29 +8,29 @@ description: Skill ultra-advance untuk memparafrase dan menghumanisasi teks akad
 ## Overview
 Skill ini dirancang untuk memparafrase literatur ilmiah sekaligus bertindak sebagai pelindung dari algoritma pendeteksi tulisan AI (seperti Turnitin AI, GPTZero, Originality.ai). Agen **DIWAJIBKAN** untuk tidak sekadar menulis ulang, melainkan menginjeksi metrik *Perplexity* (ketidaktebakan kosakata) dan *Burstiness* (variasi panjang kalimat) tingkat tinggi agar tulisan 100% terbaca seperti manusia (*Human-written*).
 
-## Ultra-Advanced Humanization Techniques (WAJIB DIPATUHI)
+## Dependencies
+- Tidak ada
 
-### 1. Manipulasi Burstiness (Variasi Panjang Kalimat yang Ekstrem)
-AI secara natural menulis kalimat dengan panjang dan ritme yang konstan. Untuk mengelabui detektor:
-- **Ciptakan asimetri**: Kombinasikan 1-2 kalimat majemuk bertingkat yang sangat panjang (25+ kata) dengan 1 kalimat deklaratif yang sangat pendek dan lugas (5-8 kata) tepat setelahnya.
-- Hindari struktur paralel yang terlalu sempurna dan seragam antar paragraf.
+## Quick Start
+Contoh penggunaan:
+*"Gunakan skill academic_paraphraser untuk memparafrase paragraf berikut agar lolos dari deteksi AI Turnitin dengan tingkat burstiness yang tinggi."*
 
-### 2. Injeksi Perplexity (Ketidaktebakan Leksikal)
-Algoritma AI pendeteksi bekerja dengan mencari kata yang paling probabel. 
-- Jangan gunakan kombinasi kata yang klise. Gunakan frasa akademik tingkat lanjut yang spesifik (bukan umum).
-- Ubah struktur transisi: Alih-alih menggunakan di awal kalimat ("However," / "Furthermore,"), sematkan transisi di tengah klausa (contoh: *"The results, however, indicate..."*).
+## Workflow
 
-### 3. Blacklist Kosakata Khas AI (Banned Words)
-**DILARANG KERAS** menggunakan kata-kata/frasa berikut yang merupakan "sidik jari" LLM:
-- *Delve, multifaceted, intricate, testament, tapestry, symphony, crucial, pivotal, essentially, ultimately, it is important to note, seamless, robust, dynamic.*
+### 1. Identifikasi Konsep Inti
+- Baca teks asli dan pahami temuan objektif atau variabelnya (jangan sampai mengubah data/fakta ilmiah).
 
-### 4. Fragmentasi Logika (Human-Like Cognitive Flow)
-Manusia seringkali menulis dengan alur berpikir yang melompat dari fakta spesifik ke observasi makro tanpa transisi formal yang kaku. 
-- Buat klausa yang sedikit tidak seimbang (tetapi tetap gramatikal) untuk membedakannya dari sintaksis robotik yang selalu memiliki format Subjek-Predikat-Objek sempurna.
-- Sesekali ubah bentuk kalimat aktif dan pasif secara sporadis dan tidak berpola di dalam satu paragraf.
+### 2. Proses De-AI
+- Hapus seluruh struktur khas AI dan kurangi kemiripan sintaksis dengan teks asli.
 
-## Workflow Execution
-1. **Identifikasi Konsep Inti**: Baca teks asli dan pahami temuan objektif atau variabelnya (jangan sampai mengubah data/fakta ilmiah).
-2. **De-AI Process**: Hapus seluruh struktur khas AI. 
-3. **Rewrite & Inject**: Tulis ulang dengan menerapkan *Burstiness* tinggi, *Perplexity* mendalam, dan *Lexical Asymmetry*.
-4. **Verifikasi Tone**: Pastikan teks terdengar seperti tulisan peneliti senior (Q1 Journal Standard) yang natural, bukan robot, dan cantumkan placeholder sitasi (contoh: `[Author, Year]`).
+### 3. Penulisan Ulang & Injeksi (Rewrite & Inject)
+- Tulis ulang teks dengan menerapkan *Burstiness* tinggi (variasi panjang kalimat yang ekstrem) dan *Perplexity* mendalam (ketidaktebakan leksikal) untuk menghasilkan alur kognitif manusiawi.
+
+### 4. Verifikasi Nada & Sitasi (Tone Verification)
+- Pastikan teks terdengar seperti tulisan peneliti senior (standar Jurnal Q1) yang natural, bukan robot, serta cantumkan placeholder sitasi secara konsisten (contoh: `[Author, Year]`).
+
+## Common Mistakes & Aturan Kritis
+- **Menggunakan Kosakata Khas AI (Banned Words)**: DILARANG KERAS menggunakan kata-kata/frasa berikut yang merupakan "sidik jari" LLM: *delve, multifaceted, intricate, testament, tapestry, symphony, crucial, pivotal, essentially, ultimately, it is important to note, seamless, robust, dynamic*.
+- **Burstiness Rendah**: Menulis dengan panjang kalimat dan ritme yang konstan. Ciptakan asimetri dengan mengombinasikan 1-2 kalimat majemuk bertingkat yang sangat panjang (25+ kata) dengan 1 kalimat deklaratif yang sangat pendek (5-8 kata) tepat setelahnya.
+- **Perplexity Rendah**: Menggunakan kombinasi kata klise atau struktur transisi monoton di awal kalimat (seperti "However," atau "Furthermore,"). Sebaiknya sematkan transisi di tengah klausa (contoh: *"The results, however, indicate..."*).
+- **Mengubah Fakta Ilmiah**: Mengubah data eksperimen, makna asli, atau klaim ilmiah saat melakukan parafrase.

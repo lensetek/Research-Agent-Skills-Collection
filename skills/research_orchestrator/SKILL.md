@@ -12,7 +12,7 @@ Skill ini adalah pintu masuk utama (*starter/entry point*) untuk mengotomatiskan
 Secara khusus, skill ini mendukung **Implicit Personalization**. Di awal eksekusi, agen wajib memeriksa keberadaan berkas `user_profile.json` di root direktori untuk memuat preferensi pengguna. Di akhir eksekusi, agen akan menganalisis umpan balik pengguna dan memperbarui berkas tersebut secara otomatis.
 
 ## Dependencies
-Skill ini mengoordinasikan eksekusi dari 18 skill berikut:
+Skill ini mengoordinasikan eksekusi dari 20 skill berikut:
 1. `discover-phenomenon-and-gap`
 2. `research-question-builder`
 3. `hypothesis-or-proposition-builder`
@@ -29,8 +29,10 @@ Skill ini mengoordinasikan eksekusi dari 18 skill berikut:
 14. `synthesize-research`
 15. `patent-and-literature-matcher`
 16. `journal-recommendation-finder`
-17. `academic-peer-reviewer`
-18. `reviewer-response-and-revision`
+17. `journal-template-formatter`
+18. `academic-peer-reviewer`
+19. `reviewer-response-and-revision`
+20. `agent-update-checker`
 
 ## Quick Start
 Contoh penggunaan:
@@ -42,16 +44,17 @@ Sebagai Orkestrator, Anda wajib memberlakukan kebijakan "Zero-Tolerance terhadap
 
 **Pengecualian Khusus (Whitelisted)**: Agen `synthetic-data-generator` adalah SATU-SATUNYA agen yang diizinkan mengarang data karena tugas spesifiknya adalah membuat persona simulasi (Digital Twin). Jangan mengirimkan peringatan larangan mockup ini kepada agen tersebut.
 
-## Orchestration Workflow
+## Workflow
 
 Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 
 ```text
-[Baca Profil] ──> [Fase 1: Masalah] ──> [Fase 2: Metodologi & Eksperimen] ──> [Fase 3: Literatur] ──> [Fase 4: Publikasi] ──> [Fase 5: Personalization]
+[Cek Update & Baca Profil] ──> [Fase 1: Masalah] ──> [Fase 2: Metodologi & Eksperimen] ──> [Fase 3: Literatur] ──> [Fase 4: Publikasi] ──> [Fase 5: Personalization]
 ```
 
-### Persiapan Awal (Load Profile)
-0. Periksa apakah berkas `user_profile.json` ada di root direktori proyek. Jika ada, baca preferensi penelitian (gaya penulisan, jurnal target, metodologi yang disukai) dan gunakan sebagai panduan default dalam setiap fase riset di bawah ini.
+### Persiapan Awal (Update Check & Load Profile)
+-1. **Pengecekan Pembaruan Terjadwal (Rate-Limited)**: Baca atribut `last_update_check` di dalam `user_profile.json`. Jalankan `agent-update-checker` **hanya jika** pengecekan terakhir dilakukan lebih dari 7 hari yang lalu (atau jika atribut tersebut belum ada). Jika hari ini sudah dicek, abaikan langkah ini agar tidak membuang waktu.
+0. Periksa apakah berkas `user_profile.json` ada di root direktori proyek. Jika ada, muat preferensi penelitian (gaya penulisan, jurnal target, dll) dan perbarui tanggal `last_update_check` ke hari ini (jika Anda baru saja mengecek update). Gunakan preferensi ini sebagai panduan default riset.
 
 ### Fase 1: Eksplorasi & Pembingkaian Masalah
 1.  Terima topik/ide awal dari pengguna.
@@ -77,12 +80,13 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 15. Jalankan `synthesize-research` untuk menyatukan seluruh bukti temuan literatur, memetakan konsensus, serta mengulas kontradiksi secara kritis.
 16. Jalankan `patent-and-literature-matcher` untuk memverifikasi kebaruan (*novelty*) klaim invensi terhadap potensi *prior art*.
 17. Jalankan `journal-recommendation-finder` untuk memberikan rekomendasi target jurnal ilmiah (Q1-Q4) yang paling cocok dengan ruang lingkup riset.
-18. Jalankan `academic-peer-reviewer` untuk mensimulasikan proses penelaahan sejawat (*peer review*) guna memberikan penilaian kritis, daftar masalah (mayor/minor), serta rekomendasi kelayakan publikasi sebelum dikirim ke jurnal resmi.
-19. (Opsional/Jika ada perbaikan) Jalankan `reviewer-response-and-revision` untuk membimbing langkah-langkah revisi naskah.
+18. Jalankan `journal-template-formatter` untuk menstruktur ulang draf akhir sesuai dengan format dan panduan penulisan (*Author Guidelines*) dari jurnal yang dipilih.
+19. Jalankan `academic-peer-reviewer` untuk mensimulasikan proses penelaahan sejawat (*peer review*) guna memberikan penilaian kritis, daftar masalah (mayor/minor), serta rekomendasi kelayakan publikasi sebelum dikirim ke jurnal resmi.
+20. (Opsional/Jika ada perbaikan) Jalankan `reviewer-response-and-revision` untuk membimbing langkah-langkah revisi naskah.
 
 ### Fase 5: Pembaruan Profil & Memori Riset (Implicit Personalization)
-20. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
-21. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
+21. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
+22. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
 
 ## Format Output: Integrated Research Dashboard
 Di akhir pengerjaan, agen harus menyajikan ringkasan eksekutif satu halaman yang memuat:

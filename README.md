@@ -5,6 +5,8 @@
 ---
 
 ### 🔥 What's New / Yang Baru (June 2026)
+* **🇮🇩 1 Skill Baru (Formatting)**: Ditambahkan `journal-template-formatter` (Fase 4) untuk memformat draf makalah sesuai panduan penulisan jurnal (IEEE, APA, Elsevier). Total skill kini menjadi 23.
+* **🇬🇧 1 New Skill (Formatting)**: Added `journal-template-formatter` (Phase 4) to format paper drafts according to target journal guidelines. Total skills are now 23.
 * **🇮🇩 Upgrade Skill Eksplorasi Celah (Gap)**: `discover-phenomenon-and-gap` kini menggunakan strategi *Survey of Surveys* dan *Batch Processing* untuk mensintesis ide dari ratusan paper tanpa token limit, serta dilengkapi indikator *Skala Kesulitan*.
 * **🇬🇧 Gap Exploration Skill Upgrade**: `discover-phenomenon-and-gap` now utilizes *Survey of Surveys* and *Batch Processing* strategies to synthesize ideas from hundreds of papers without token limits, complete with a *Difficulty Scale* indicator.
 * **🇮🇩 Keamanan Anti-Halusinasi Global**: Diterapkan kebijakan *Zero-Tolerance* terhadap data/paper fiktif di seluruh agen (Orkestrator, Akuisisi Data, Ekstraksi Metodologi, dan Matriks) untuk menjamin integritas riset.
@@ -26,7 +28,7 @@
 
 Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
 
-### Kumpulan Skill yang Tersedia (22 Skills)
+### Kumpulan Skill yang Tersedia (23 Skills)
 
 #### 🚀 Orkestrator Utama (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 5 fase otomatis penuh (termasuk personalisasi implisit) secara sekuensial.
@@ -58,12 +60,13 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 18. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Memformulasikan draf jawaban diplomatis *Response to Reviewers* dan merencanakan revisi naskah secara konsisten.
 19. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Memparafrase dan menghumanisasi teks akademik secara struktural untuk menghindari plagiasi dan menjaga makna asli.
 20. **[advanced-similarity-reducer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/advanced_similarity_reducer/SKILL.md)**: Skill tingkat lanjut (ultra-advance) untuk merombak total struktur paragraf secara konseptual guna menurunkan skor similarity (Turnitin) secara ekstrem tanpa mengubah makna.
+21. **[journal-template-formatter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_template_formatter/SKILL.md)**: Bertugas mengubah, menyusun, dan memformat draf makalah riset menjadi format jurnal penelitian sesuai dengan panduan penulis (Author Guidelines) atau template yang dituju.
 
 #### 📁 Fase 5 — Personalization & Memori (Personalisasi)
-21. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): Berkas profil penelitian pengguna yang diperbarui secara implisit oleh orkestrator di akhir sesi untuk menyimpan gaya penulisan, target jurnal, dan preferensi riset.
+22. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): Berkas profil penelitian pengguna yang diperbarui secara implisit oleh orkestrator di akhir sesi untuk menyimpan gaya penulisan, target jurnal, dan preferensi riset.
 
 #### 🔧 Utilitas (Maintenance & Update)
-22. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Bertugas mengecek pembaruan agen secara berkala dari repositori dan menawarkan instalasi pembaruan melalui prompt URL.
+23. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Bertugas mengecek pembaruan agen secara berkala dari repositori dan menawarkan instalasi pembaruan melalui prompt URL.
 
 ---
 
@@ -71,7 +74,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 
 This repository is a collection of custom **Skills** for **Research Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
 
-### Available Skills (22 Skills)
+### Available Skills (23 Skills)
 
 #### 🚀 Main Orchestrator (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 5-phase research workflow sequentially and automatically (including implicit personalization).
@@ -103,12 +106,13 @@ This repository is a collection of custom **Skills** for **Research Agents**. Th
 18. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Drafts formal Responses to Reviewers and plans manuscript modifications consistently.
 19. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Paraphrases and humanizes academic texts using advanced structural rewriting to avoid plagiarism while preserving original meaning.
 20. **[advanced-similarity-reducer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/advanced_similarity_reducer/SKILL.md)**: Ultra-advanced skill to completely restructure paragraphs conceptually, drastically reducing similarity scores (Turnitin) without losing academic weight or original meaning.
+21. **[journal-template-formatter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_template_formatter/SKILL.md)**: Responsible for modifying, structuring, and formatting research paper drafts into target journal formats based on Author Guidelines.
 
 #### 📁 Phase 5 — Personalization & Memory (Personalization)
-21. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): User research profile file updated implicitly by the orchestrator at the end of a session to store writing styles, target journals, and research preferences.
+22. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): User research profile file updated implicitly by the orchestrator at the end of a session to store writing styles, target journals, and research preferences.
 
 #### 🔧 Utility (Maintenance & Update)
-22. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Responsible for periodically checking for agent updates from the repository and offering update installations via a URL prompt.
+23. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Responsible for periodically checking for agent updates from the repository and offering update installations via a URL prompt.
 
 ---
 
