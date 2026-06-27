@@ -5,6 +5,8 @@
 ---
 
 ### 🔥 What's New / Yang Baru (June 2026)
+* **🇮🇩 Integrasi API Terbuka & Indeksasi Global (WoS, SINTA)**: Menyelaraskan seluruh skill pencarian dan penilaian kualitas rujukan (`source-quality-appraiser`, `journal-recommendation-finder`, `literature-review-generator`, dll.) agar secara default memprioritaskan API terbuka gratis (OpenAlex, arXiv, PubMed, Semantic Scholar) dengan skema *fallback* otomatis tanpa kewajiban konfigurasi API Key rumit bagi pengguna. Dilengkapi audit indeksasi Web of Science (WoS) serta peringkat akreditasi jurnal nasional SINTA Indonesia (S1-S6).
+* **🇬🇧 Open APIs & Global Indexing Integration (WoS, SINTA)**: Aligned all search and appraiser skills to prioritize free public APIs (OpenAlex, arXiv, PubMed, Semantic Scholar) by default with automatic fallback, avoiding complex API key setup for users. Includes Web of Science (WoS) and Indonesian SINTA (S1-S6) accreditation audit support.
 * **🇮🇩 1 Skill Baru (Formatting)**: Ditambahkan `journal-template-formatter` (Fase 4) untuk memformat draf makalah sesuai panduan penulisan jurnal (IEEE, APA, Elsevier). Total skill kini menjadi 23.
 * **🇬🇧 1 New Skill (Formatting)**: Added `journal-template-formatter` (Phase 4) to format paper drafts according to target journal guidelines. Total skills are now 23.
 * **🇮🇩 Upgrade Skill Eksplorasi Celah (Gap)**: `discover-phenomenon-and-gap` kini menggunakan strategi *Survey of Surveys* dan *Batch Processing* untuk mensintesis ide dari ratusan paper tanpa token limit, serta dilengkapi indikator *Skala Kesulitan*.

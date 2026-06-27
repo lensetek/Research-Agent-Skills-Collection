@@ -21,7 +21,7 @@ Contoh penggunaan:
 
 ### 1. Validasi Metadata Referensi (Metadata Integrity Audit)
 - Periksa setiap entri daftar pustaka untuk memastikan validitas tautan atau DOI.
-- Lakukan kueri silang menggunakan API (seperti OpenAlex) untuk memverifikasi keaslian:
+- Secara default (*zero-configuration*), lakukan kueri silang menggunakan API terbuka seperti **OpenAlex**, **Crossref**, dan public tier **Semantic Scholar** (tanpa membebani pengguna untuk mengonfigurasi API Key) guna memverifikasi keaslian:
   - Judul paper yang tepat.
   - Daftar lengkap nama penulis (*authors*).
   - Tahun publikasi, nama jurnal/prosiding, volume, nomor, dan rentang halaman.
@@ -48,6 +48,7 @@ Sajikan laporan audit rujukan dalam format tabel wajib berikut:
 
 ## Common Mistakes & Aturan Kritis (Anti-Halusinasi Referensi)
 - **Referensi Halusinasi (Fake References)**: Menyertakan rujukan buatan AI yang terlihat meyakinkan (memiliki nama penulis terkenal dan judul yang masuk akal) namun sebenarnya tidak pernah dipublikasikan atau DOI-nya palsu.
-- **Kutipan Berantai yang Menyesatkan (Lazy Citation)**: Mengutip paper B yang mengutip paper A untuk suatu teori, padahal isi asli paper A berbeda dengan interpretasi paper B. Agen wajib menelusuri sumber primer jika memungkinkan.
+- **Kutipan Berantai yang Menyesatkan (Lazy Citation)**: Mengutip paper B yang mengutip paper A untuk suatu teori, padahal isi asli paper A berbeda dengan interpretasi paper B. Agen wajib menelusuri sumber primer jika kemungkinan akses PDF/Teks penuh terbuka tersedia.
 - **Overgeneralization Citation**: Mengutip paper eksperimen spesifik seolah-olah itu membuktikan teori universal tanpa menyebutkan batasan uji eksperimen dari paper tersebut.
 - **Salah Format Penulisan**: Tidak konsisten dalam menyusun daftar referensi (menggabungkan format APA dan IEEE secara acak).
+- **Hambatan API Key**: Menghentikan proses audit atau memunculkan pesan error ketika API Key Semantic Scholar tidak terisi. Lakukan validasi silang menggunakan API publik gratis (OpenAlex / Crossref) yang tidak membatasi akses tanpa token.
