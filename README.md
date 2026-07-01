@@ -4,7 +4,9 @@
 
 ---
 
-### 🔥 What's New / Yang Baru (June 2026)
+### 🔥 What's New / Yang Baru (July 2026)
+* **🇮🇩 Alur Dataset-Driven Ideation (Data Descriptors) - NEW**: Menambahkan fungsionalitas pencarian ide riset berbasis dataset sekunder dari publikasi *Data Descriptor* terbaru. Pengguna dapat memilih untuk mengekstrak rekomendasi riset dari pembuat data (**Potensi 1**) atau mencari korelasi variabel baru menggunakan metode analisis/ML pilihan mereka sendiri (**Potensi 2**). Terintegrasi langsung pada Fase 1 di `research-orchestrator` dan `discover-phenomenon-and-gap`.
+* **🇬🇧 Dataset-Driven Ideation Flow (Data Descriptors) - NEW**: Added a new research ideation flow based on secondary datasets from recent *Data Descriptor* publications. Users can choose to extract future work recommendations proposed by the original authors (**Potential 1**) or check the novelty of variable correlations using their preferred ML/analysis method (**Potential 2**). Directly integrated into Phase 1 of `research-orchestrator` and `discover-phenomenon-and-gap`.
 * **🇮🇩 Integrasi API Terbuka & Indeksasi Global (WoS, SINTA)**: Menyelaraskan seluruh skill pencarian dan penilaian kualitas rujukan (`source-quality-appraiser`, `journal-recommendation-finder`, `literature-review-generator`, dll.) agar secara default memprioritaskan API terbuka gratis (OpenAlex, arXiv, PubMed, Semantic Scholar) dengan skema *fallback* otomatis tanpa kewajiban konfigurasi API Key rumit bagi pengguna. Dilengkapi audit indeksasi Web of Science (WoS) serta peringkat akreditasi jurnal nasional SINTA Indonesia (S1-S6).
 * **🇬🇧 Open APIs & Global Indexing Integration (WoS, SINTA)**: Aligned all search and appraiser skills to prioritize free public APIs (OpenAlex, arXiv, PubMed, Semantic Scholar) by default with automatic fallback, avoiding complex API key setup for users. Includes Web of Science (WoS) and Indonesian SINTA (S1-S6) accreditation audit support.
 * **🇮🇩 1 Skill Baru (Formatting)**: Ditambahkan `journal-template-formatter` (Fase 4) untuk memformat draf makalah sesuai panduan penulisan jurnal (IEEE, APA, Elsevier). Total skill kini menjadi 23.

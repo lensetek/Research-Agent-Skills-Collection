@@ -57,10 +57,14 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 0. Periksa apakah berkas `user_profile.json` ada di root direktori proyek. Jika ada, muat preferensi penelitian (gaya penulisan, jurnal target, dll) dan perbarui tanggal `last_update_check` ke hari ini (jika Anda baru saja mengecek update). Gunakan preferensi ini sebagai panduan default riset.
 
 ### Fase 1: Eksplorasi & Pembingkaian Masalah
-1.  Terima topik/ide awal dari pengguna.
-2.  Jalankan `discover-phenomenon-and-gap` untuk memetakan fenomena tren terbaru (melalui *Survey of Surveys*) dan merumuskan celah ilmiah (*research gap*) konkret. **PENTING:** Evaluasi indikator "Skala Kesulitan" (Trivial/Moderate/Hardcore) yang dihasilkan agen tersebut, dan laporkan kepada pengguna untuk meminta persetujuan sebelum melanjutkan riset ke langkah berikutnya.
-3.  Kirimkan hasil gap tersebut ke `research-question-builder` untuk merumuskan Pertanyaan Penelitian (RQ), Tujuan, dan Kontribusi riset.
-4.  Kirimkan hasil RQ ke `hypothesis-or-proposition-builder` untuk merancang kerangka konseptual teoretis serta hipotesis/proposisi yang akan diuji.
+1.  Terima topik/ide awal dari pengguna. Tanyakan secara proaktif apakah pengguna ingin mencari ide berbasis literatur teoritis (**Mode A: Literature-Driven**) atau berbasis dataset sekunder (**Mode B: Dataset-Driven (Data Descriptors)**).
+2.  Jika pengguna memilih **Mode B**, tanyakan keahlian metodologi/analisis data pilihan mereka (misal: Random Forest, SVM, Regresi Linier, dll.).
+3.  Jalankan `discover-phenomenon-and-gap` sesuai mode terpilih:
+    - **Mode A**: Petakan fenomena tren terbaru dan rumuskan gap riset ilmiah.
+    - **Mode B**: Temukan paper *Data Descriptor* terbaru, ekstrak rekomendasi penulis asli (**Potensi 1**), dan cari usulan inovasi korelasi variabel baru menggunakan metode pilihan pengguna (**Potensi 2**).
+    - Presentasikan opsi ide riset ini kepada pengguna, evaluasi indikator "Skala Kesulitan" (Trivial/Moderate/Hardcore), dan minta persetujuan/pilihan pengguna atas opsi yang ingin dieksekusi sebelum melanjutkan ke langkah berikutnya.
+4.  Kirimkan ide/gap riset terpilih ke `research-question-builder` untuk merumuskan Pertanyaan Penelitian (RQ), Tujuan, dan Kontribusi riset.
+5.  Kirimkan hasil RQ ke `hypothesis-or-proposition-builder` untuk merancang kerangka konseptual teoretis serta hipotesis/proposisi yang akan diuji.
 
 ### Fase 2: Perencanaan Metodologi & Eksperimen Data
 5.  Kirimkan seluruh dokumen luaran Fase 1 ke `research-design-planner` untuk menyusun detail metodologi eksperimen, penentuan sampling/variabel, alur pengujian data, serta skenario pengujian ketahanan (*robustness/ablation*).
