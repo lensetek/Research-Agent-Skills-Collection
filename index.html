@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Agent Skills Collection - Metodologi Ilmiah & Eksperimen AI</title>
+  <meta name="description" content="Kumpulan skill metodologis ilmiah terstruktur untuk Research Agent di bawah sistem plugin science. Membantu peneliti memetakan gap, mengolah data, dan menulis draf riset bebas halusinasi.">
+  <meta name="keywords" content="Research Agent, AI Research, Academic Research, OpenAlex API, PRISMA SLR, SINTA, Web of Science, Science Plugin">
+  <meta name="author" content="Research Agent Team">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i data-lucide="microscope" class="logo-icon"></i>
+        <span>Research Agent <span class="accent-text">Skills</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#whats-new">Yang Baru</a>
+        <a href="#skills-explorer">Daftar Skill</a>
+        <a href="#install">Instalasi</a>
+        <a href="https://github.com/lensetek/Research-Agent-Skills-Collection" target="_blank" class="github-btn">
+          <i data-lucide="github"></i> GitHub
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+    <!-- Mobile Nav Links -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#whats-new">Yang Baru</a>
+      <a href="#skills-explorer">Daftar Skill</a>
+      <a href="#install">Instalasi</a>
+      <a href="https://github.com/lensetek/Research-Agent-Skills-Collection" target="_blank" class="github-btn">
+        <i data-lucide="github"></i> GitHub
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="glow-container">
+      <div class="glow-ball blue"></div>
+      <div class="glow-ball purple"></div>
+    </div>
+    <div class="hero-content">
+      <div class="badge fade-in">
+        <span class="badge-dot"></span>
+        <span>Version 1.0.0 (July 2026)</span>
+      </div>
+      <h1 class="fade-in delay-1">Empowering AI with <span class="gradient-text">Scientific Rigor</span></h1>
+      <p class="hero-desc fade-in delay-2">
+        Kumpulan skill terstruktur untuk **Research Agent** (plugin `science`). Mengotomatiskan seluruh alur penelitian mulai dari penemuan ide berbasis dataset, PRISMA SLR, pengolahan data statistik, hingga simulasi peer-review secara akurat dan bebas halusinasi.
+      </p>
+      <div class="hero-actions fade-in delay-3">
+        <a href="#skills-explorer" class="btn btn-primary">Eksplorasi Skill</a>
+        <a href="#install" class="btn btn-secondary">Cara Pasang</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What's New Section -->
+  <section class="section" id="whats-new">
+    <div class="container">
+      <div class="section-header text-center animate-on-scroll">
+        <h2>Yang Baru / <span class="gradient-text">What's New</span></h2>
+        <p>Pembaruan fitur dan kapabilitas terbaru untuk mendukung penelitian ilmiah yang kredibel.</p>
+      </div>
+
+      <div class="timeline animate-on-scroll">
+        <!-- July 2026 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Juli 2026</div>
+          <div class="timeline-card">
+            <h3>📊 Alur Dataset-Driven Ideation (Data Descriptors) <span class="new-tag">NEW</span></h3>
+            <p>Mencari ide riset turunan dari publikasi <em>Data Descriptor</em> (Scientific Data, Data in Brief). Menawarkan dua jenis opsi:</p>
+            <ul class="feature-list">
+              <li><strong>Potensi 1:</strong> Ekstraksi rekomendasi riset masa depan langsung dari bagian <em>Usage Notes</em>.</li>
+              <li><strong>Potensi 2:</strong> Analisis novelty dengan menghubungkan variabel baru menggunakan metode analisis/ML pilihan Anda.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- June 2026 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Juni 2026</div>
+          <div class="timeline-card">
+            <h3>🇮🇩 Integrasi API Terbuka & Indeksasi Global (WoS, SINTA)</h3>
+            <p>Pencarian literatur memprioritaskan API terbuka gratis (OpenAlex, arXiv, PubMed) dengan fallback otomatis tanpa konfigurasi API Key rumit. Dilengkapi audit indeksasi Web of Science (WoS) dan peringkat akreditasi jurnal nasional <strong>SINTA Indonesia (S1-S6)</strong>.</p>
+          </div>
+        </div>
+
+        <!-- PRISMA SLR & Skills -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Juni 2026</div>
+          <div class="timeline-card">
+            <h3>🔍 Upgrade PRISMA SLR & Skill Baru</h3>
+            <p>Integrasi alur kerja PRISMA 4-tahap (Identification, Screening, Eligibility, Included) dengan filtering Python otomatis dan checkpoint CSV. Penambahan skill baru: <code>model-evaluator-validator</code> (Fase 2) dan <code>journal-template-formatter</code> (Fase 4).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Skills Explorer -->
+  <section class="section alt-bg" id="skills-explorer">
+    <div class="container">
+      <div class="section-header text-center animate-on-scroll">
+        <h2>Interactive <span class="gradient-text">Skills Explorer</span></h2>
+        <p>Jelajahi 23 skill akademis yang terbagi ke dalam 5 fase pengerjaan riset terstruktur.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="tabs-container animate-on-scroll">
+        <div class="tabs-scroll">
+          <button class="tab-btn active" data-phase="starter">🚀 Starter</button>
+          <button class="tab-btn" data-phase="phase1">📁 Fase 1: Masalah</button>
+          <button class="tab-btn" data-phase="phase2">📁 Fase 2: Eksperimen</button>
+          <button class="tab-btn" data-phase="phase3">📁 Fase 3: Literatur</button>
+          <button class="tab-btn" data-phase="phase4">📁 Fase 4: Publikasi</button>
+          <button class="tab-btn" data-phase="utility">🔧 Utilitas</button>
+        </div>
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="tab-content animate-on-scroll">
+        <!-- Starter Panel -->
+        <div class="tab-panel active" id="starter">
+          <div class="skills-grid">
+            <div class="skill-card featured">
+              <div class="card-icon"><i data-lucide="play-circle"></i></div>
+              <h3>research-orchestrator</h3>
+              <p class="skill-desc">Pintu masuk utama untuk mengotomatiskan seluruh alur kerja riset 5 fase otomatis penuh, memanggil sub-skill secara beruntun, serta mendukung <strong>Implicit Personalization</strong> berbasis riwayat umpan balik pengguna.</p>
+              <div class="card-meta">
+                <span>Starter / Entry Point</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 1 Panel -->
+        <div class="tab-panel" id="phase1">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="compass"></i></div>
+              <h3>discover-phenomenon-and-gap</h3>
+              <p class="skill-desc">Mengeksplorasi tren fenomena baru, menganalisis anomali literatur, memetakan celah ilmiah formal (Mode A), atau melakukan pencarian ide berbasis dataset sekunder (Mode B - Data Descriptors).</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="help-circle"></i></div>
+              <h3>research-question-builder</h3>
+              <p class="skill-desc">Mengubah celah riset (gap) yang ditemukan menjadi rumusan masalah, Research Questions (RQ), tujuan penelitian, kontribusi ilmiah, dan batasan ruang lingkup riset secara formal.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="git-branch"></i></div>
+              <h3>hypothesis-or-proposition-builder</h3>
+              <p class="skill-desc">Menyusun pernyataan hipotesis (riset kuantitatif) atau proposisi (riset kualitatif) secara logis disertai visualisasi diagram Mermaid untuk kerangka konseptual teoretis.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 2 Panel -->
+        <div class="tab-panel" id="phase2">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="sliders"></i></div>
+              <h3>research-design-planner</h3>
+              <p class="skill-desc">Merancang desain metode eksperimen (kuantitatif, kualitatif, mixed-method, AI/ML) lengkap dengan skenario validasi, pengujian robustness, dan rancangan ablation study.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="users"></i></div>
+              <h3>synthetic-data-generator</h3>
+              <p class="skill-desc">Simulasi digital twin untuk membuat dataset sintetis kuantitatif/kualitatif dalam skala besar dengan mensimulasikan karakteristik persona responden.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="download"></i></div>
+              <h3>data-acquisition-specialist</h3>
+              <p class="skill-desc">Mengumpulkan, men-download, atau melakukan web scraping data (statis/dinamis) dari berbagai sumber internet/API untuk menghasilkan dataset terstruktur asli.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
+              <h3>data-scientist-analyst</h3>
+              <p class="skill-desc">Melakukan pembersihan data, statistik deskriptif, analisis multivariat (regresi/PLS), pelatihan model ML, dan pembuatan visualisasi data riset secara otomatis.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="check-square"></i></div>
+              <h3>model-evaluator-validator</h3>
+              <p class="skill-desc">Menguji signifikansi statistik (seperti T-Test, ANOVA, atau uji Diebold-Mariano) dari performa prediksi model untuk membuktikan keabsahan temuan riset.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 3 Panel -->
+        <div class="tab-panel" id="phase3">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="book-open"></i></div>
+              <h3>literature-review-generator</h3>
+              <p class="skill-desc">Menyusun draf tinjauan pustaka terstruktur (Narrative, SLR, Thematic, Chronological, Critical) lengkap dengan alur PRISMA 4-tahap dan Argument Map.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="file-text"></i></div>
+              <h3>extract-methodology</h3>
+              <p class="skill-desc">Mengekstrak 10 parameter teknis utama (tujuan, parameter eksperimen, dataset, dll.) dari teks penuh paper ilmiah secara akurat.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="award"></i></div>
+              <h3>source-quality-appraiser</h3>
+              <p class="skill-desc">Mengaudit kredibilitas sumber rujukan dengan memetakan kuartil Scopus/WoS, peringkat konferensi CORE, pendeteksian bias, serta status akreditasi jurnal nasional <strong>SINTA (S1-S6)</strong>.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="link"></i></div>
+              <h3>citation-and-reference-validator</h3>
+              <p class="skill-desc">Audit keaslian rujukan (DOI) dan memverifikasi kalimat sitasi di naskah terhadap paper referensi untuk menghindari salah sitasi/halusinasi rujukan.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="grid"></i></div>
+              <h3>paper-matrix-builder</h3>
+              <p class="skill-desc">Mengotomatiskan pembuatan tabel ringkasan komparasi State-of-the-Art (SotA) dan peta bukti (evidence mapping) dari kumpulan paper rujukan.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fase 4 Panel -->
+        <div class="tab-panel" id="phase4">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="shuffle"></i></div>
+              <h3>synthesize-research</h3>
+              <p class="skill-desc">Menganalisis perbandingan temuan kritis lintas-paper, memetakan area konsensus atau kontradiksi ilmiah, dan menyaring opini agen.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="search"></i></div>
+              <h3>patent-and-literature-matcher</h3>
+              <p class="skill-desc">Mengevaluasi kebaruan (novelty) dari ide invensi baru dengan membandingkan klaim teknologi terhadap potensi publikasi ilmiah prior art.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="compass"></i></div>
+              <h3>journal-recommendation-finder</h3>
+              <p class="skill-desc">Merekomendasikan target jurnal ilmiah yang cocok (Scopus, WoS, SINTA S1-S6) berdasarkan relevansi scope, kuartil, biaya publikasi (APC), dan kecepatan review.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="eye"></i></div>
+              <h3>academic-peer-reviewer</h3>
+              <p class="skill-desc">Simulasi peer review independen (Accept/Revision/Reject) dengan daftar saran perbaikan kritis (mayor & minor) sebelum disubmit ke jurnal sungguhan.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="edit-3"></i></div>
+              <h3>reviewer-response-and-revision</h3>
+              <p class="skill-desc">Membantu memformulasikan draf surat jawaban "Response to Reviewers" secara profesional serta menyusun rencana revisi naskah secara konsisten.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="repeat"></i></div>
+              <h3>academic-paraphraser</h3>
+              <p class="skill-desc">Memparafrase draf teks akademik secara komparatif untuk menghindari plagiasi dan deteksi AI generator dengan tetap mempertahankan bobot ilmiah asli.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="minimize-2"></i></div>
+              <h3>advanced-similarity-reducer</h3>
+              <p class="skill-desc">Penyusunan ulang struktur kalimat dan sintaksis tingkat lanjut untuk menurunkan persentase kemiripan (Turnitin) secara signifikan tanpa merusak konsep asli.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="layout"></i></div>
+              <h3>journal-template-formatter</h3>
+              <p class="skill-desc">Memformat ulang struktur, tata letak, dan gaya sitasi draf paper sesuai dengan Author Guidelines jurnal target (seperti IEEE, APA, Harvard, dll.).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Utility Panel -->
+        <div class="tab-panel" id="utility">
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="refresh-cw"></i></div>
+              <h3>agent-update-checker</h3>
+              <p class="skill-desc">Mengecek pembaruan (update) agent skills terbaru dari repositori GitHub secara berkala dan menawarkan pemasangan otomatis kepada pengguna.</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="user"></i></div>
+              <h3>user_profile.json</h3>
+              <p class="skill-desc">Berkas profil di root direktori yang mendasari <strong>Implicit Personalization</strong>. Menyimpan gaya penulisan, jurnal target, dan preferensi riset pengguna yang diperbarui secara otomatis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Install Section -->
+  <section class="section" id="install">
+    <div class="container small-container">
+      <div class="section-header text-center animate-on-scroll">
+        <h2>Cara Pemasangan / <span class="gradient-text">Installation</span></h2>
+        <p>Pasang seluruh paket skill ini secara langsung melalui obrolan dengan agen Anda.</p>
+      </div>
+
+      <div class="install-box animate-on-scroll">
+        <div class="install-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="title">Chat Prompt</span>
+        </div>
+        <div class="install-body">
+          <code id="prompt-code">Tolong download dan install agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection</code>
+          <button class="copy-btn" id="copy-btn" aria-label="Copy code">
+            <i data-lucide="copy" id="copy-icon"></i>
+            <span id="copy-text">Salin</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="install-note animate-on-scroll">
+        <i data-lucide="info" class="note-icon"></i>
+        <div>
+          <h4>Langkah Verifikasi</h4>
+          <p>Setelah proses pengunduhan selesai, tanyakan kepada agen Anda: <em>"Konfirmasi berapa agent skill yang ada di project ini?"</em> untuk memastikan 23 skill aktif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Research Agent Team. Dibuat untuk sistem plugin science (Antigravity SDK).</p>
+      <div class="footer-links">
+        <a href="https://github.com/lensetek/Research-Agent-Skills-Collection" target="_blank">
+          <i data-lucide="github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
