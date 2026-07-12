@@ -139,9 +139,20 @@ Seluruh skill ini memanfaatkan modul pencarian literatur bawaan sistem / All the
 
 ---
 
-## Instalasi via Prompt / Installation via Prompt
+## Cara Instalasi / Installation Methods
 
-### 🇮🇩 Bahasa Indonesia
+### 🚀 Cara 1: Menggunakan NPX (Direkomendasikan) / Method 1: NPX (Recommended)
+Cara paling stabil dan bersih untuk menginstal skill di sistem Anda / The most stable and clean way to install skills into your system:
+```bash
+npx skills add https://github.com/lensetek/Research-Agent-Skills-Collection
+```
+*Menggunakan `npx skills add` sangat direkomendasikan karena dirancang khusus untuk memanajemen dependensi skill dengan lebih baik.*
+
+---
+
+### 🤖 Cara 2: Instalasi via Prompt / Method 2: Installation via Prompt
+
+#### 🇮🇩 Bahasa Indonesia
 Anda dapat memasang seluruh skill ini secara langsung menggunakan perintah/prompt kepada agen Anda:
 
 1. **Prompt Instalasi**:

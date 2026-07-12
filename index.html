@@ -305,22 +305,42 @@
     <div class="container small-container">
       <div class="section-header text-center animate-on-scroll">
         <h2>Cara Pemasangan / <span class="gradient-text">Installation</span></h2>
-        <p>Pasang seluruh paket skill ini secara langsung melalui obrolan dengan agen Anda.</p>
+        <p>Terdapat dua cara untuk memasang paket skill ini, melalui NPX atau langsung melalui obrolan dengan agen Anda.</p>
       </div>
 
-      <div class="install-box animate-on-scroll">
-        <div class="install-header">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="title">Chat Prompt</span>
+      <div class="install-method animate-on-scroll" style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1rem;"><i data-lucide="terminal" style="vertical-align: middle; margin-right: 0.5rem;"></i> Cara 1: NPX (Direkomendasikan)</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-secondary);">Cara paling stabil untuk menginstal skill di workspace Anda.</p>
+        <div class="install-box">
+          <div class="install-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="title">Terminal / Bash</span>
+          </div>
+          <div class="install-body">
+            <code>npx skills add https://github.com/lensetek/Research-Agent-Skills-Collection</code>
+          </div>
         </div>
-        <div class="install-body">
-          <code id="prompt-code">Tolong download dan install agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection</code>
-          <button class="copy-btn" id="copy-btn" aria-label="Copy code">
-            <i data-lucide="copy" id="copy-icon"></i>
-            <span id="copy-text">Salin</span>
-          </button>
+      </div>
+
+      <div class="install-method animate-on-scroll">
+        <h3 style="margin-bottom: 1rem;"><i data-lucide="message-square" style="vertical-align: middle; margin-right: 0.5rem;"></i> Cara 2: Chat Prompt (Via Agen)</h3>
+        <p style="margin-bottom: 1rem; color: var(--text-secondary);">Pasang secara langsung dengan memberikan perintah/prompt kepada agen Anda.</p>
+        <div class="install-box">
+          <div class="install-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="title">Chat Prompt</span>
+          </div>
+          <div class="install-body">
+            <code id="prompt-code">Tolong download dan install agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection</code>
+            <button class="copy-btn" id="copy-btn" aria-label="Copy code">
+              <i data-lucide="copy" id="copy-icon"></i>
+              <span id="copy-text">Salin</span>
+            </button>
+          </div>
         </div>
       </div>
 
