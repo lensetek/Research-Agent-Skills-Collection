@@ -20,12 +20,6 @@
 
 ## Bahasa Indonesia
 
-### 🌐 Landing Page Interaktif
-Kami menyediakan halaman arahan (**Landing Page**) interaktif yang memvisualisasikan seluruh daftar 23 skill riset secara estetis dan responsif. Anda dapat membukanya secara lokal dengan mengklik tautan berikut langsung di browser Anda:
-*   **[index.html](file:///c:/Users/ACER/Documents/GitHub/Research-Agent-Skills-Collection/index.html)**
-
-Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
-
 ### Kumpulan Skill yang Tersedia (24 Skills)
 
 #### 🚀 Orkestrator Utama (Starter Skill)
@@ -71,11 +65,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 
 ## English
 
-### 🌐 Interactive Landing Page
-We provide an interactive **Landing Page** to visually explore the 23 research skills in a responsive, modern dark-mode interface. You can open it locally directly in your browser:
-*   **[index.html](file:///c:/Users/ACER/Documents/GitHub/Research-Agent-Skills-Collection/index.html)**
 
-This repository is a collection of custom **Skills** for **Research Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
 
 ### Available Skills (24 Skills)
 
