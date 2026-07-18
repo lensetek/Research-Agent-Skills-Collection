@@ -23,9 +23,13 @@ Contoh penggunaan:
 ### 1. Penentuan Target Ekstraksi
 - Tentukan elemen teknis apa saja yang ingin diekstrak (e.g., nama model, dataset, metrik F1-score/Accuracy, optimizer, learning rate, hardware yang digunakan).
 
-### 2. Pengambilan & Pembacaan Paper Lengkap
+### 2. Pengambilan & Pre-parsing Paper (Mandatory Section Filtering)
 - Cari ID paper atau URL paper menggunakan tools pencarian literatur.
-- Baca bagian Metode (Methodology), Pengaturan Eksperimen (Experimental Setup), dan Hasil (Results) pada paper target secara detail. Jangan berasumsi hanya dari abstrak.
+- **Eksekusi Helper Programatik (WAJIB)**: Sebelum melakukan ekstraksi manual, jalankan skrip parser seksi untuk memfilter bagian Metode, Setup, dan Hasil guna mencegah *context overload* pada LLM:
+  ```bash
+  python skills/extract_methodology/scripts/parse_sections.py --input paper_text.md --output sections.json
+  ```
+- Evaluasi potongan seksi dari `sections.json` secara mendalam. Jangan berasumsi hanya dari abstrak.
 
 ### 3. Ekstraksi Informasi Terstruktur (10 Komponen Wajib)
 Ekstrak informasi secara presisi ke dalam tabel Markdown atau skema JSON yang mencakup komponen berikut:
@@ -45,6 +49,16 @@ Ekstrak informasi secara presisi ke dalam tabel Markdown atau skema JSON yang me
 
 ### 5. Pelaporan Hasil Ekstraksi
 - Buat rangkuman teknis yang bersih dan to-the-point menggunakan poin-poin terstruktur dan tabel data. Hindari narasi panjang lebar yang tidak perlu.
+
+## Few-Shot Guidance (Contoh Benar vs Salah)
+
+### ❌ [SALAH] Ekstraksi Mengambang / Mengarang
+> **Learning Rate**: Umummnya 0.001 menggunakan Adam.  
+> **Dataset Size**: Tidak disebutkan tetapi terlihat besar.
+
+### ✅ [BENAR] Ekstraksi Faktual & Presisi
+> **Learning Rate**: tidak dilaporkan  
+> **Dataset Size**: 50,000 sampel transaksi (Tabel 1, Halaman 4)
 
 ## Common Mistakes & Aturan Kritis (Anti-Halusinasi)
 - **Hanya Membaca Abstrak**: Abstrak jarang memuat detail teknis. Agen wajib menelusuri isi utama paper.

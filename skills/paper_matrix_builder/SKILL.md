@@ -28,8 +28,12 @@ Pilih schema matriks berdasarkan kebutuhan analisis:
 - Gunakan data yang telah diekstrak secara akurat (melalui skill `extract-methodology`).
 - Pastikan tidak ada data yang dikarang. Jika informasi dari suatu paper tidak lengkap, wajib diisi dengan **"tidak dilaporkan"** atau **"tidak disebutkan"**.
 
-### 3. Pembuatan Tabel Komparasi (Markdown Matrix)
-Susun tabel perbandingan dalam format Markdown yang bersih dan mudah dibaca. Contoh format tabel perbandingan model:
+### 3. Pembuatan Tabel Komparasi (Programmatic Matrix Generation)
+- **Eksekusi Helper Programatik (WAJIB)**: Sebelum menyusun rincian narasi, jalankan skrip pembangun matriks untuk mengombinasikan JSON ekstraksi menjadi tabel Markdown dan CSV yang terstandarisasi:
+  ```bash
+  python skills/paper_matrix_builder/scripts/build_sota_matrix.py --input extractions/ --output-md sota_matrix.md --output-csv sota_matrix.csv
+  ```
+- Tampilkan isi `sota_matrix.md` ke dalam jawaban akhir agen. Format tabel standar:
 | Penulis & Tahun | Pendekatan/Model | Dataset Utama | Parameter Kunci | Metrik Evaluasi | Angka Performa | Celah / Keterbatasan |
 |---|---|---|---|---|---|---|
 

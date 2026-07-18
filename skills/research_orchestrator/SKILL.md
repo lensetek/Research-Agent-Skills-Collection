@@ -53,9 +53,10 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 [Cek Update & Baca Profil] ──> [Fase 1: Masalah] ──> [Fase 2: Metodologi & Eksperimen] ──> [Fase 3: Literatur] ──> [Fase 4: Publikasi] ──> [Fase 5: Personalization]
 ```
 
-### Persiapan Awal (Update Check & Load Profile)
+### Persiapan Awal (Update Check, Load Profile & Progress Init)
 -1. **Pengecekan Pembaruan Terjadwal (Rate-Limited)**: Baca atribut `last_update_check` di dalam `user_profile.json`. Jalankan `agent-update-checker` **hanya jika** pengecekan terakhir dilakukan lebih dari 7 hari yang lalu (atau jika atribut tersebut belum ada). Jika hari ini sudah dicek, abaikan langkah ini agar tidak membuang waktu.
-0. Periksa apakah berkas `user_profile.json` ada di root direktori proyek. Jika ada, muat preferensi penelitian (gaya penulisan, jurnal target, dll) dan perbarui tanggal `last_update_check` ke hari ini (jika Anda baru saja mengecek update). Gunakan preferensi ini sebagai panduan default riset.
+0. Periksa apakah berkas `user_profile.json` ada di root direktori proyek. Jika ada, muat preferensi penelitian.
+0b. **Inisialisasi Progress Tracker (WAJIB)**: Jalankan `python bin/progress_tracker.py init --topic "<TOPIC>"` untuk mencatat state 5 fase di `progress.json`. Perbarui state dengan `python bin/progress_tracker.py update` di setiap penyelesaian skill/fase.
 
 ### Fase 1: Eksplorasi & Pembingkaian Masalah
 1.  Terima topik/ide awal dari pengguna. Tanyakan secara proaktif apakah pengguna ingin mencari ide berbasis literatur teoritis (**Mode A: Literature-Driven**) atau berbasis dataset sekunder (**Mode B: Dataset-Driven (Data Descriptors)**).
@@ -71,15 +72,15 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 5.  Kirimkan seluruh dokumen luaran Fase 1 ke `research-design-planner` untuk menyusun detail metodologi eksperimen, penentuan sampling/variabel, alur pengujian data, serta skenario pengujian ketahanan (*robustness/ablation*).
 6.  Jalankan `synthetic-data-generator` (jika dibutuhkan) untuk meng-generate dataset sintetis kuantitatif/kualitatif dengan mensimulasikan persona responden.
 7.  Jalankan `data-acquisition-specialist` (sebagai opsi/pelengkap) untuk mencari, mengumpulkan, menyedot (*scraping*), atau mengunduh dataset asli dari sumber internet/API.
-8.  Jalankan `data-scientist-analyst` untuk melakukan pembersihan data (*preprocessing*), analisis statistik, melatih model Machine Learning, serta memvisualisasikan hasil eksperimen.
+8.  Jalankan `data-scientist-analyst` untuk melakukan pembersihan data (*preprocessing*), analisis statistik (**WAJIB jalankan `python skills/data_scientist_analyst/scripts/run_stat_analysis.py`**), melatih model Machine Learning, serta memvisualisasikan hasil eksperimen.
 9.  Jalankan `model-evaluator-validator` secara wajib untuk melakukan uji signifikansi statistik (misal: T-test, Diebold-Mariano) pada hasil prediksi model guna menguji validitas dan komparasi performanya.
 
 ### Fase 3: Kajian & Validasi Literatur
 10. Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru. Khusus mode SLR berskala besar, agen wajib mematuhi alur PRISMA 4-tahap (Tarik Metadata -> Filter Python -> Semantic Audit -> Ekstrak) dan menyimpan *checkpoint* `.csv` di tiap langkah.
-11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama hasil pencarian.
+11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama (**WAJIB jalankan `python skills/extract_methodology/scripts/parse_sections.py`** untuk memfilter teks seksi sebelum ekstraksi).
 12. Jalankan `source_quality_appraiser` untuk mengaudit tingkat kredibilitas jurnal rujukan (kuartil Scopus/CORE ranking) guna menyaring paper yang lemah metodologinya.
 13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual. **WAJIB jalankan skrip `python skills/citation_and_reference_validator/scripts/validate_references.py`** untuk memfilter referensi palsu sebelum diserahkan ke fase sintesis.
-14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan yang telah lolos validasi programatik ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
+14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan yang telah lolos validasi programatik (**WAJIB jalankan `python skills/paper_matrix_builder/scripts/build_sota_matrix.py`**) ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
 
 ### Fase 4: Sintesis & Kesiapan Publikasi
 15. Jalankan `synthesize-research` untuk menyatukan seluruh bukti temuan literatur, memetakan konsensus, serta mengulas kontradiksi secara kritis.
@@ -91,8 +92,8 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 21. (Opsional/Integrasi Vault) Jalankan `obsidian-vault-exporter` untuk mengekspor dan memformat seluruh dokumen luaran riset ke dalam struktur catatan Obsidian Vault lengkap dengan Frontmatter terstruktur dan *WikiLinks* 2 arah.
 
 ### Fase 5: Pembaruan Profil & Memori Riset (Implicit Personalization)
-22. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
-23. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
+22. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna.
+23. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini. Tandai penyelesaian akhir pada `progress.json` dengan `python bin/progress_tracker.py advance`.
 
 ## Format Output: Integrated Research Dashboard
 Di akhir pengerjaan, agen harus menyajikan ringkasan eksekutif satu halaman yang memuat:
