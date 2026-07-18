@@ -19,13 +19,20 @@ Contoh penggunaan:
 
 ## Workflow
 
-### 1. Validasi Metadata Referensi (Metadata Integrity Audit)
-- Periksa setiap entri daftar pustaka untuk memastikan validitas tautan atau DOI.
-- Secara default (*zero-configuration*), lakukan kueri silang menggunakan API terbuka seperti **OpenAlex**, **Crossref**, dan public tier **Semantic Scholar** (tanpa membebani pengguna untuk mengonfigurasi API Key) guna memverifikasi keaslian:
-  - Judul paper yang tepat.
-  - Daftar lengkap nama penulis (*authors*).
-  - Tahun publikasi, nama jurnal/prosiding, volume, nomor, dan rentang halaman.
-- Tandai referensi yang tidak dapat diverifikasi secara online.
+### 1. Validasi Metadata Referensi (Programmatic Metadata Integrity Audit)
+- **Eksekusi Guardrail Programatik (WAJIB)**: Sebelum melakukan penilaian manual, agen **WAJIB** mengeksekusi skrip verifikasi otomatis untuk memvalidasi daftar pustaka terhadap API Crossref dan OpenAlex:
+  ```bash
+  python skills/citation_and_reference_validator/scripts/validate_references.py --input references.json --output report.json
+  ```
+  atau jalankan secara langsung untuk single DOI/Title:
+  ```bash
+  python skills/citation_and_reference_validator/scripts/validate_references.py --doi <DOI> --title "<TITLE>"
+  ```
+- Evaluasi luaran `report.json`:
+  - **`VALID`**: Metadata terverifikasi resmi oleh database publik (Crossref/OpenAlex).
+  - **`METADATA_MISMATCH`**: Paper ditemukan, namun atribut tahun/penulis/judul yang diberikan berbeda signifikan dari database asli.
+  - **`HALLUCINATED`**: DOI atau judul tidak ditemukan di basis data publik manapun. **Wajib langsung ditolak / dibuang dari daftar rujukan.**
+- Tandai referensi yang berstatus `HALLUCINATED` atau `METADATA_MISMATCH` secara eksplisit pada laporan audit.
 
 ### 2. Validasi Keselarasan Konteks Kutipan (Contextual Citation Alignment)
 - Ambil kalimat di naskah yang berisi sitasi (misal: *"Model transformer terbukti tidak stabil pada sekuens panjang [1]"*).

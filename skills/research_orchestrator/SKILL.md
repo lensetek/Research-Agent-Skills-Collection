@@ -12,7 +12,7 @@ Skill ini adalah pintu masuk utama (*starter/entry point*) untuk mengotomatiskan
 Secara khusus, skill ini mendukung **Implicit Personalization**. Di awal eksekusi, agen wajib memeriksa keberadaan berkas `user_profile.json` di root direktori untuk memuat preferensi pengguna. Di akhir eksekusi, agen akan menganalisis umpan balik pengguna dan memperbarui berkas tersebut secara otomatis.
 
 ## Dependencies
-Skill ini mengoordinasikan eksekusi dari 20 skill berikut:
+Skill ini mengoordinasikan eksekusi dari 21 skill berikut:
 1. `discover-phenomenon-and-gap`
 2. `research-question-builder`
 3. `hypothesis-or-proposition-builder`
@@ -32,7 +32,8 @@ Skill ini mengoordinasikan eksekusi dari 20 skill berikut:
 17. `journal-template-formatter`
 18. `academic-peer-reviewer`
 19. `reviewer-response-and-revision`
-20. `agent-update-checker`
+20. `obsidian-vault-exporter`
+21. `agent-update-checker`
 
 ## Quick Start
 Contoh penggunaan:
@@ -77,8 +78,8 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 10. Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru. Khusus mode SLR berskala besar, agen wajib mematuhi alur PRISMA 4-tahap (Tarik Metadata -> Filter Python -> Semantic Audit -> Ekstrak) dan menyimpan *checkpoint* `.csv` di tiap langkah.
 11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama hasil pencarian.
 12. Jalankan `source_quality_appraiser` untuk mengaudit tingkat kredibilitas jurnal rujukan (kuartil Scopus/CORE ranking) guna menyaring paper yang lemah metodologinya.
-13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual oleh paper referensi (bebas halusinasi sitasi).
-14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
+13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual. **WAJIB jalankan skrip `python skills/citation_and_reference_validator/scripts/validate_references.py`** untuk memfilter referensi palsu sebelum diserahkan ke fase sintesis.
+14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan yang telah lolos validasi programatik ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
 
 ### Fase 4: Sintesis & Kesiapan Publikasi
 15. Jalankan `synthesize-research` untuk menyatukan seluruh bukti temuan literatur, memetakan konsensus, serta mengulas kontradiksi secara kritis.
@@ -87,10 +88,11 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 18. Jalankan `journal-template-formatter` untuk menstruktur ulang draf akhir sesuai dengan format dan panduan penulisan (*Author Guidelines*) dari jurnal yang dipilih.
 19. Jalankan `academic-peer-reviewer` untuk mensimulasikan proses penelaahan sejawat (*peer review*) guna memberikan penilaian kritis, daftar masalah (mayor/minor), serta rekomendasi kelayakan publikasi sebelum dikirim ke jurnal resmi.
 20. (Opsional/Jika ada perbaikan) Jalankan `reviewer-response-and-revision` untuk membimbing langkah-langkah revisi naskah.
+21. (Opsional/Integrasi Vault) Jalankan `obsidian-vault-exporter` untuk mengekspor dan memformat seluruh dokumen luaran riset ke dalam struktur catatan Obsidian Vault lengkap dengan Frontmatter terstruktur dan *WikiLinks* 2 arah.
 
 ### Fase 5: Pembaruan Profil & Memori Riset (Implicit Personalization)
-21. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
-22. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
+22. Evaluasi seluruh sesi interaksi, komentar, dan umpan balik eksplisit maupun implisit dari pengguna (misalnya: penolakan jurnal tertentu, koreksi atas gaya penulisan, atau preferensi metode analisis data).
+23. Perbarui atau buat berkas `user_profile.json` di root direktori proyek secara otomatis untuk merekam preferensi baru ini, memastikan sesi penelitian berikutnya lebih cerdas dan selaras dengan pola kerja pengguna.
 
 ## Format Output: Integrated Research Dashboard
 Di akhir pengerjaan, agen harus menyajikan ringkasan eksekutif satu halaman yang memuat:

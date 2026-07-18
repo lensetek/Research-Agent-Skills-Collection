@@ -79,12 +79,40 @@
       </div>
 
       <div class="timeline animate-on-scroll">
+        <!-- July 2026 - Programmatic Reference Validator -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Juli 2026</div>
+          <div class="timeline-card">
+            <h3>🛡️ Programmatic Citation Guardrail <span class="new-tag">NEW</span></h3>
+            <p>Sistem verifikasi otomatis berbasis skrip Python untuk mengeliminasi halusinasi referensi:</p>
+            <ul class="feature-list">
+              <li><strong>Zero-Hallucination:</strong> Memvalidasi DOI dan kecocokan judul secara langsung menggunakan API Crossref dan OpenAlex secara deterministik.</li>
+              <li><strong>Hard Gatekeeper:</strong> Menolak sitasi fiktif atau salah atribut (mismatch) secara otomatis sebelum diproses oleh model LLM.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- July 2026 - Obsidian Vault Integration -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Juli 2026</div>
+          <div class="timeline-card">
+            <h3>🗂️ Integrasi Obsidian Vault & Second Brain <span class="new-tag">NEW</span></h3>
+            <p>Integrasi ekspor otomatis luaran riset ke struktur catatan Obsidian Vault:</p>
+            <ul class="feature-list">
+              <li><strong>Vault Formatting:</strong> <code>obsidian-vault-exporter</code> (Skill ke-24) mentransformasikan literature notes, matriks SotA, dan hipotesis menjadi Markdown Obsidian-native.</li>
+              <li><strong>Knowledge Graph:</strong> Dilengkapi YAML Frontmatter terstruktur, <em>bidirectional WikiLinks</em> (<code>[[Links]]</code>), serta template query Dataview visual.</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- July 2026 - DevTools MCP & Digital Twin -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-date">Juli 2026</div>
           <div class="timeline-card">
-            <h3>🌐 Integrasi Chrome DevTools MCP & Digital Twin <span class="new-tag">NEW</span></h3>
+            <h3>🌐 Integrasi Chrome DevTools MCP & Digital Twin</h3>
             <p>Integrasi browser otomatis untuk pengumpulan data dan simulasi interaksi kuesioner web:</p>
             <ul class="feature-list">
               <li><strong>Scraping Hibrida:</strong> <code>data-acquisition-specialist</code> mengutamakan API/HTTP cepat, dan beralih ke Chrome DevTools headless jika terblokir/dinamis.</li>
@@ -135,7 +163,7 @@
     <div class="container">
       <div class="section-header text-center animate-on-scroll">
         <h2>Interactive <span class="gradient-text">Skills Explorer</span></h2>
-        <p>Jelajahi 23 skill akademis yang terbagi ke dalam 5 fase pengerjaan riset terstruktur.</p>
+        <p>Jelajahi 24 skill akademis yang terbagi ke dalam 5 fase pengerjaan riset terstruktur.</p>
       </div>
 
       <!-- Tab Buttons -->
@@ -239,7 +267,7 @@
             <div class="skill-card">
               <div class="card-icon"><i data-lucide="link"></i></div>
               <h3>citation-and-reference-validator</h3>
-              <p class="skill-desc">Audit keaslian rujukan (DOI) dan memverifikasi kalimat sitasi di naskah terhadap paper referensi untuk menghindari salah sitasi/halusinasi rujukan.</p>
+              <p class="skill-desc">Audit keaslian rujukan (DOI) secara programatik via script Python terhadap API Crossref/OpenAlex serta memverifikasi kalimat sitasi di naskah untuk mengeliminasi halusinasi.</p>
             </div>
             <div class="skill-card">
               <div class="card-icon"><i data-lucide="grid"></i></div>
@@ -291,6 +319,11 @@
               <div class="card-icon"><i data-lucide="layout"></i></div>
               <h3>journal-template-formatter</h3>
               <p class="skill-desc">Memformat ulang struktur, tata letak, dan gaya sitasi draf paper sesuai dengan Author Guidelines jurnal target (seperti IEEE, APA, Harvard, dll.).</p>
+            </div>
+            <div class="skill-card">
+              <div class="card-icon"><i data-lucide="database"></i></div>
+              <h3>obsidian-vault-exporter</h3>
+              <p class="skill-desc">Mentransformasikan seluruh dokumen luaran riset ke dalam berkas Markdown Obsidian-native lengkap dengan YAML Frontmatter terstruktur, <em>WikiLinks</em> 2 arah, tag, serta query Dataview visual.</p>
             </div>
           </div>
         </div>

@@ -5,28 +5,16 @@
 ---
 
 ### 🔥 What's New / Yang Baru (July 2026)
-* **🇮🇩 Integrasi Browser Chrome DevTools MCP & Digital Twin Google Form - NEW**: Menambahkan integrasi dengan server MCP `chrome-devtools`. Mendukung strategi scraping hibrida/dual-mode (API/HTTP cepat dengan fallback otomatis ke browser headless jika terblokir/butuh JavaScript) pada `data-acquisition-specialist`, serta fungsionalitas **Active Participant Simulator** pada `synthetic-data-generator` untuk mengisi kuesioner online (seperti Google Forms) secara otomatis meniru simulasi persona responden riil.
-* **🇬🇧 Chrome DevTools MCP & Digital Twin Google Form Integration - NEW**: Integrated the `chrome-devtools` MCP server. Enables hybrid/dual-mode scraping (fast API/HTTP mode with automatic headless browser fallback when blocked or requiring JS rendering) for `data-acquisition-specialist`, and **Active Participant Simulator** capabilities for `synthetic-data-generator` to automatically fill out online questionnaires (such as Google Forms) by simulating real respondent personas.
-* **🇮🇩 Alur Dataset-Driven Ideation (Data Descriptors)**: Menambahkan fungsionalitas pencarian ide riset berbasis dataset sekunder dari publikasi *Data Descriptor* terbaru. Pengguna dapat memilih untuk mengekstrak rekomendasi riset dari pembuat data (**Potensi 1**) atau mencari korelasi variabel baru menggunakan metode analisis/ML pilihan mereka sendiri (**Potensi 2**). Terintegrasi langsung pada Fase 1 di `research-orchestrator` dan `discover-phenomenon-and-gap`.
-* **🇬🇧 Dataset-Driven Ideation Flow (Data Descriptors)**: Added a new research ideation flow based on secondary datasets from recent *Data Descriptor* publications. Users can choose to extract future work recommendations proposed by the original authors (**Potential 1**) or check the novelty of variable correlations using their preferred ML/analysis method (**Potential 2**). Directly integrated into Phase 1 of `research-orchestrator` and `discover-phenomenon-and-gap`.
-* **🇮🇩 Integrasi API Terbuka & Indeksasi Global (WoS, SINTA)**: Menyelaraskan seluruh skill pencarian dan penilaian kualitas rujukan (`source-quality-appraiser`, `journal-recommendation-finder`, `literature-review-generator`, dll.) agar secara default memprioritaskan API terbuka gratis (OpenAlex, arXiv, PubMed, Semantic Scholar) dengan skema *fallback* otomatis tanpa kewajiban konfigurasi API Key rumit bagi pengguna. Dilengkapi audit indeksasi Web of Science (WoS) serta peringkat akreditasi jurnal nasional SINTA Indonesia (S1-S6).
-* **🇬🇧 Open APIs & Global Indexing Integration (WoS, SINTA)**: Aligned all search and appraiser skills to prioritize free public APIs (OpenAlex, arXiv, PubMed, Semantic Scholar) by default with automatic fallback, avoiding complex API key setup for users. Includes Web of Science (WoS) and Indonesian SINTA (S1-S6) accreditation audit support.
-* **🇮🇩 1 Skill Baru (Formatting)**: Ditambahkan `journal-template-formatter` (Fase 4) untuk memformat draf makalah sesuai panduan penulisan jurnal (IEEE, APA, Elsevier). Total skill kini menjadi 23.
-* **🇬🇧 1 New Skill (Formatting)**: Added `journal-template-formatter` (Phase 4) to format paper drafts according to target journal guidelines. Total skills are now 23.
-* **🇮🇩 Upgrade Skill Eksplorasi Celah (Gap)**: `discover-phenomenon-and-gap` kini menggunakan strategi *Survey of Surveys* dan *Batch Processing* untuk mensintesis ide dari ratusan paper tanpa token limit, serta dilengkapi indikator *Skala Kesulitan*.
-* **🇬🇧 Gap Exploration Skill Upgrade**: `discover-phenomenon-and-gap` now utilizes *Survey of Surveys* and *Batch Processing* strategies to synthesize ideas from hundreds of papers without token limits, complete with a *Difficulty Scale* indicator.
-* **🇮🇩 Keamanan Anti-Halusinasi Global**: Diterapkan kebijakan *Zero-Tolerance* terhadap data/paper fiktif di seluruh agen (Orkestrator, Akuisisi Data, Ekstraksi Metodologi, dan Matriks) untuk menjamin integritas riset.
-* **🇬🇧 Global Anti-Hallucination Security**: Enforced a Zero-Tolerance policy against fake data/papers across all agents (Orchestrator, Data Acquisition, Extract Methodology, and Matrix Builder) to ensure research integrity.
-* **🇮🇩 Upgrade Skill SLR (PRISMA Funnel)**: `literature-review-generator` kini mengintegrasikan alur kerja PRISMA 4-tahap dengan filter otomatis Python dan checkpoint CSV untuk menangani ribuan paper.
-* **🇬🇧 SLR Skill Upgrade (PRISMA Funnel)**: `literature-review-generator` now integrates a 4-step PRISMA workflow with automated Python filtering and CSV checkpoints to handle thousands of papers.
-* **🇮🇩 1 Skill Validator Baru**: Ditambahkan `model-evaluator-validator` (Fase 2) untuk menguji signifikansi statistik (T-Test, Diebold-Mariano) dari hasil prediksi model. Total skill kini menjadi 22.
-* **🇬🇧 1 New Validator Skill**: Added `model-evaluator-validator` (Phase 2) to test the statistical significance of model predictions. Total skills are now 22.
-* **🇮🇩 1 Skill Baru (Digital Twin)**: Ditambahkan `synthetic-data-generator` (Fase 2) untuk meng-generate dataset sintetis kuantitatif/kualitatif dengan mensimulasikan persona responden.
-* **🇬🇧 1 New Skill (Digital Twin)**: Added `synthetic-data-generator` (Phase 2) to generate quantitative/qualitative synthetic datasets by simulating respondent personas.
-* **🇮🇩 2 Skill Data Baru**: Ditambahkan `data-acquisition-specialist` untuk akuisisi/scraping data, dan `data-scientist-analyst` untuk olah data statistik/ML pada Fase 2. `research-orchestrator` telah diperbarui untuk mendukung alur kerja 22 skill.
-* **🇬🇧 2 New Data Skills**: Added `data-acquisition-specialist` for data acquisition/scraping, and `data-scientist-analyst` for statistical/ML data processing in Phase 2. `research-orchestrator` has been updated to support the 22-skill workflow.
-* **🇮🇩 Fitur Personalisasi Implisit Baru**: Ditambahkan Fase 5 ke dalam `research-orchestrator`. Agen sekarang secara otomatis membaca preferensi Anda dari `user_profile.json` di awal sesi dan merekam umpan balik Anda secara implisit ke dalam file tersebut di akhir sesi agar riset berikutnya berjalan lebih cerdas.
-* **🇬🇧 New Implicit Personalization Feature**: Added Phase 5 to the `research-orchestrator`. The agent now automatically loads your preferences from `user_profile.json` at the start of a session and implicitly records your feedback back into the file at the end of the session to make subsequent runs smarter.
+* **🇮🇩 Programmatic Guardrail Anti-Halusinasi Referensi - NEW**: Menambahkan skrip verifikasi berbasis Python (`validate_references.py`) pada `citation-and-reference-validator`. Secara otomatis mencocokkan DOI, kesamaan judul (*fuzzy string matching*), penulis, dan tahun terbit terhadap basis data Crossref dan OpenAlex tanpa memerlukan konfigurasi API Key rumit, guna memblokir referensi fiktif/halusinasi dari model LLM secara mutlak.
+* **🇬🇧 Programmatic Reference Validation Guardrail - NEW**: Added an automatic Python-based verification script (`validate_references.py`) to the `citation-and-reference-validator` skill. Programmatically validates DOIs, title similarity, authors, and publication years against Crossref and OpenAlex APIs without complex API key setups to completely block hallucinated or fake reference citations.
+* **🇮🇩 Integrasi Obsidian Vault & Knowledge Graph - NEW**: Menambahkan skill `obsidian-vault-exporter` (Skill ke-24). Memungkinkan agen mentransformasikan seluruh luaran riset (literature notes, matriks SotA, hipotesis, dan sintesis) menjadi berkas Markdown Obsidian-native lengkap dengan YAML Frontmatter terstruktur, *bidirectional links* (`[[WikiLinks]]`), tag, serta query Dataview siap pakai untuk visualisasi Second Brain.
+* **🇬🇧 Obsidian Vault & Knowledge Graph Integration - NEW**: Added the `obsidian-vault-exporter` skill (24th Skill). Enables AI agents to transform all research outputs (literature notes, SotA matrices, hypotheses, and synthesis) into Obsidian-native Markdown files with structured YAML Frontmatter, *bidirectional links* (`[[WikiLinks]]`), tags, and ready-to-use Dataview queries for Second Brain visualization.
+* **🇮🇩 Integrasi Browser Chrome DevTools MCP & Digital Twin Google Form**: Menambahkan integrasi dengan server MCP `chrome-devtools`. Mendukung scraping hibrida/dual-mode pada `data-acquisition-specialist` serta fungsionalitas pengisi kuesioner otomatis pada `synthetic-data-generator` via browser headless.
+* **🇬🇧 Chrome DevTools MCP & Digital Twin Google Form Integration**: Integrated the `chrome-devtools` MCP server. Enables hybrid/dual-mode scraping for `data-acquisition-specialist` and automated questionnaire filling for `synthetic-data-generator` via a headless browser.
+* **🇮🇩 Alur Dataset-Driven Ideation (Data Descriptors)**: Menambahkan pencarian ide riset berbasis dataset sekunder dari publikasi *Data Descriptor* terbaru untuk mengekstrak rekomendasi riset pembuat data (**Potensi 1**) atau mencari korelasi variabel baru menggunakan metode analisis/ML pilihan pengguna (**Potensi 2**).
+* **🇬🇧 Dataset-Driven Ideation Flow (Data Descriptors)**: Added a new research ideation flow based on secondary datasets from recent *Data Descriptor* publications to extract future work recommendations (**Potential 1**) or check the novelty of variable correlations (**Potential 2**).
+* **🇮🇩 Integrasi API Terbuka & Indeksasi Global (WoS, SINTA)**: Menyelaraskan seluruh skill pencarian dan penilaian kualitas rujukan agar secara default memprioritaskan API terbuka gratis (OpenAlex, arXiv, PubMed) dengan skema fallback otomatis. Dilengkapi audit indeksasi Web of Science (WoS) serta peringkat akreditasi jurnal nasional SINTA Indonesia.
+* **🇬🇧 Open APIs & Global Indexing Integration (WoS, SINTA)**: Aligned all search and appraiser skills to prioritize free public APIs (OpenAlex, arXiv, PubMed) by default with automatic fallback. Includes Web of Science (WoS) and Indonesian SINTA accreditation audit support.
 
 ---
 
@@ -38,7 +26,7 @@ Kami menyediakan halaman arahan (**Landing Page**) interaktif yang memvisualisas
 
 Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asisten Agen Peneliti). Kumpulan skill ini dipasang langsung ke dalam sistem plugin `science` untuk membekali agen AI dengan prosedur metodologis ilmiah yang kokoh dalam mencari, menganalisis, mengekstrak, dan mengevaluasi literatur akademis serta paten teknologi secara valid tanpa halusinasi.
 
-### Kumpulan Skill yang Tersedia (23 Skills)
+### Kumpulan Skill yang Tersedia (24 Skills)
 
 #### 🚀 Orkestrator Utama (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 5 fase otomatis penuh (termasuk personalisasi implisit) secara sekuensial.
@@ -62,7 +50,7 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 12. **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audit keaslian rujukan (DOI) dan memvalidasi dukungan kontekstual kalimat rujukan (mencegah salah sitasi).
 13. **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Mengotomatiskan pembuatan tabel ringkasan komparasi State-of-the-Art (SotA) dan peta bukti (*evidence map*).
 
-#### 📁 Fase 4 — Synthesis, Novelty & Publication (Sintesis & Publikasi)
+#### 📁 Fase 4 — Synthesis, Novelty & Publication (Sintesis, Publikasi & Vault Exporter)
 14. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Analisis komparasi temuan kritis, memetakan konsensus & kontradiksi, serta memisahkan opini dari bukti rujukan.
 15. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Mendeteksi potensi *prior art* dengan mencocokkan komponen klaim invensi terhadap literatur ilmiah.
 16. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Mencari jurnal target terbaik berdasarkan kuartil, relevansi scope, biaya APC, dan turnaround time (bebas jurnal predator).
@@ -71,12 +59,13 @@ Repositori ini adalah kumpulan **Skills** khusus untuk **Research Agent** (Asist
 19. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Memparafrase dan menghumanisasi teks akademik secara struktural untuk menghindari plagiasi dan menjaga makna asli.
 20. **[advanced-similarity-reducer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/advanced_similarity_reducer/SKILL.md)**: Skill tingkat lanjut (ultra-advance) untuk merombak total struktur paragraf secara konseptual guna menurunkan skor similarity (Turnitin) secara ekstrem tanpa mengubah makna.
 21. **[journal-template-formatter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_template_formatter/SKILL.md)**: Bertugas mengubah, menyusun, dan memformat draf makalah riset menjadi format jurnal penelitian sesuai dengan panduan penulis (Author Guidelines) atau template yang dituju.
+22. **[obsidian-vault-exporter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/obsidian_vault_exporter/SKILL.md)**: Bertugas mentransformasikan dan mengespor luaran riset ke dalam berkas Markdown Obsidian-native lengkap dengan YAML Frontmatter terstruktur, *WikiLinks* 2 arah, tag, serta query Dataview.
 
 #### 📁 Fase 5 — Personalization & Memori (Personalisasi)
-22. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): Berkas profil penelitian pengguna yang diperbarui secara implisit oleh orkestrator di akhir sesi untuk menyimpan gaya penulisan, target jurnal, dan preferensi riset.
+23. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): Berkas profil penelitian pengguna yang diperbarui secara implisit oleh orkestrator di akhir sesi untuk menyimpan gaya penulisan, target jurnal, dan preferensi riset.
 
 #### 🔧 Utilitas (Maintenance & Update)
-23. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Bertugas mengecek pembaruan agen secara berkala dari repositori dan menawarkan instalasi pembaruan melalui prompt URL.
+24. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Bertugas mengecek pembaruan agen secara berkala dari repositori dan menawarkan instalasi pembaruan melalui prompt URL.
 
 ---
 
@@ -88,7 +77,7 @@ We provide an interactive **Landing Page** to visually explore the 23 research s
 
 This repository is a collection of custom **Skills** for **Research Agents**. These skills are directly installed into the `science` plugin system to equip AI agents with solid scientific methodology procedures to search, analyze, extract, and evaluate academic literature and technology patents factually without hallucination.
 
-### Available Skills (23 Skills)
+### Available Skills (24 Skills)
 
 #### 🚀 Main Orchestrator (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 5-phase research workflow sequentially and automatically (including implicit personalization).
@@ -112,7 +101,7 @@ This repository is a collection of custom **Skills** for **Research Agents**. Th
 12. **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audits citation metadata (DOIs) and validates contextual citation support (preventing misattribution/fake citations).
 13. **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Automates the creation of standardized State-of-the-Art (SotA) matrices and evidence maps.
 
-#### 📁 Phase 4 — Synthesis, Novelty & Publication (Synthesis & Publishing)
+#### 📁 Phase 4 — Synthesis, Novelty & Publication (Synthesis, Publishing & Vault Exporter)
 14. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Compares critical findings, maps consensuses and debates, and separates objective evidence from agent interpretation.
 15. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Discovers potential prior art by mapping patent/invention claims against scientific publications.
 16. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Discovers ideal target journals by quartile, scope alignment, APC costs, and turnaround times, avoiding predatory venues.
@@ -121,12 +110,13 @@ This repository is a collection of custom **Skills** for **Research Agents**. Th
 19. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Paraphrases and humanizes academic texts using advanced structural rewriting to avoid plagiarism while preserving original meaning.
 20. **[advanced-similarity-reducer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/advanced_similarity_reducer/SKILL.md)**: Ultra-advanced skill to completely restructure paragraphs conceptually, drastically reducing similarity scores (Turnitin) without losing academic weight or original meaning.
 21. **[journal-template-formatter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_template_formatter/SKILL.md)**: Responsible for modifying, structuring, and formatting research paper drafts into target journal formats based on Author Guidelines.
+22. **[obsidian-vault-exporter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/obsidian_vault_exporter/SKILL.md)**: Transforms and exports research outputs into Obsidian-native Markdown notes with structured YAML Frontmatter, 2-way WikiLinks, tags, and Dataview queries.
 
 #### 📁 Phase 5 — Personalization & Memory (Personalization)
-22. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): User research profile file updated implicitly by the orchestrator at the end of a session to store writing styles, target journals, and research preferences.
+23. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): User research profile file updated implicitly by the orchestrator at the end of a session to store writing styles, target journals, and research preferences.
 
 #### 🔧 Utility (Maintenance & Update)
-23. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Responsible for periodically checking for agent updates from the repository and offering update installations via a URL prompt.
+24. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Responsible for periodically checking for agent updates from the repository and offering update installations via a URL prompt.
 
 ---
 
