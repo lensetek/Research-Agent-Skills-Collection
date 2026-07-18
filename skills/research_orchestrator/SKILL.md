@@ -72,15 +72,15 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 5.  Kirimkan seluruh dokumen luaran Fase 1 ke `research-design-planner` untuk menyusun detail metodologi eksperimen, penentuan sampling/variabel, alur pengujian data, serta skenario pengujian ketahanan (*robustness/ablation*).
 6.  Jalankan `synthetic-data-generator` (jika dibutuhkan) untuk meng-generate dataset sintetis kuantitatif/kualitatif dengan mensimulasikan persona responden.
 7.  Jalankan `data-acquisition-specialist` (sebagai opsi/pelengkap) untuk mencari, mengumpulkan, menyedot (*scraping*), atau mengunduh dataset asli dari sumber internet/API.
-8.  Jalankan `data-scientist-analyst` untuk melakukan pembersihan data (*preprocessing*), analisis statistik (**WAJIB jalankan `python skills/data_scientist_analyst/scripts/run_stat_analysis.py`**), melatih model Machine Learning, serta memvisualisasikan hasil eksperimen.
+8.  Jalankan `data-scientist-analyst` untuk melakukan pembersihan data (*preprocessing*), analisis statistik (**WAJIB jalankan `run_stat_analysis.py` dari folder `scripts/` skill terkait**), melatih model Machine Learning, serta memvisualisasikan hasil eksperimen.
 9.  Jalankan `model-evaluator-validator` secara wajib untuk melakukan uji signifikansi statistik (misal: T-test, Diebold-Mariano) pada hasil prediksi model guna menguji validitas dan komparasi performanya.
 
 ### Fase 3: Kajian & Validasi Literatur
 10. Jalankan `literature-review-generator` untuk memetakan perkembangan riset historis dan menyusun argumentasi posisi riset baru. Khusus mode SLR berskala besar, agen wajib mematuhi alur PRISMA 4-tahap (Tarik Metadata -> Filter Python -> Semantic Audit -> Ekstrak) dan menyimpan *checkpoint* `.csv` di tiap langkah.
-11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama (**WAJIB jalankan `python skills/extract_methodology/scripts/parse_sections.py`** untuk memfilter teks seksi sebelum ekstraksi).
+11. Gunakan `extract-methodology` untuk mengekstrak data teknis dari paper-paper rujukan utama (**WAJIB jalankan `parse_sections.py` dari folder `scripts/` skill terkait** untuk memfilter teks seksi sebelum ekstraksi).
 12. Jalankan `source_quality_appraiser` untuk mengaudit tingkat kredibilitas jurnal rujukan (kuartil Scopus/CORE ranking) guna menyaring paper yang lemah metodologinya.
-13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual. **WAJIB jalankan skrip `python skills/citation_and_reference_validator/scripts/validate_references.py`** untuk memfilter referensi palsu sebelum diserahkan ke fase sintesis.
-14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan yang telah lolos validasi programatik (**WAJIB jalankan `python skills/paper_matrix_builder/scripts/build_sota_matrix.py`**) ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi.
+13. Jalankan `citation-and-reference-validator` untuk memverifikasi keakuratan DOI dan memastikan klaim naskah didukung secara faktual. **WAJIB jalankan skrip `validate_references.py` dari folder `scripts/` skill terkait** untuk memfilter referensi palsu sebelum diserahkan ke fase sintesis.
+14. Jalankan `paper-matrix-builder` untuk merangkum seluruh parameter teknis rujukan yang telah lolos validasi programatik (**WAJIB jalankan `build_sota_matrix.py` dari folder `scripts/` skill terkait**) ke dalam Tabel State-of-the-Art (SotA) yang terstandarisasi. *(Catatan: Agen wajib mengeksekusi skrip Python menggunakan path absolut lokasi instalasi skill tersebut baik lokal maupun global).*
 
 ### Fase 4: Sintesis & Kesiapan Publikasi
 15. Jalankan `synthesize-research` untuk menyatukan seluruh bukti temuan literatur, memetakan konsensus, serta mengulas kontradiksi secara kritis.

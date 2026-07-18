@@ -32,9 +32,9 @@ Contoh penggunaan:
 
 ## Workflow Execution
 1. **Muat Dataset**: Baca berkas data mentah yang ada di proyek (seperti `.csv`, `.json`, atau `.xlsx`).
-2. **Eksekusi Analisis Statistik Deterministik (WAJIB)**: Sebelum menulis analisis kustom, jalankan skrip pembantu statistik untuk menghasilkan ringkasan angka faktual tanpa risiko halusinasi:
+2. **Eksekusi Analisis Statistik Deterministik (WAJIB)**: Sebelum menulis analisis kustom, jalankan skrip pembantu statistik untuk menghasilkan ringkasan angka faktual tanpa risiko halusinasi *(Gunakan path absolut dari `run_stat_analysis.py` di direktori instalasi skill ini)*:
   ```bash
-  python skills/data_scientist_analyst/scripts/run_stat_analysis.py --input dataset.csv --output stat_report.json
+  python "<PATH_KE_SKILL>/scripts/run_stat_analysis.py" --input dataset.csv --output stat_report.json
   ```
 3. **Eksplorasi Data (EDA)**: Gunakan angka pasti dari `stat_report.json` untuk menganalisis karakteristik dataset (mean, std, median, null count).
 4. **Penyusunan Script Analisis & ML**: Tulis script Python terstruktur (baik berkas `.py` atau Jupyter Notebook `.ipynb`) untuk memproses data, menjalankan uji statistik inferensial, dan melatih model ML.

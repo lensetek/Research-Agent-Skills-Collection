@@ -29,9 +29,9 @@ Pilih schema matriks berdasarkan kebutuhan analisis:
 - Pastikan tidak ada data yang dikarang. Jika informasi dari suatu paper tidak lengkap, wajib diisi dengan **"tidak dilaporkan"** atau **"tidak disebutkan"**.
 
 ### 3. Pembuatan Tabel Komparasi (Programmatic Matrix Generation)
-- **Eksekusi Helper Programatik (WAJIB)**: Sebelum menyusun rincian narasi, jalankan skrip pembangun matriks untuk mengombinasikan JSON ekstraksi menjadi tabel Markdown dan CSV yang terstandarisasi:
+- **Eksekusi Helper Programatik (WAJIB)**: Sebelum menyusun rincian narasi, jalankan skrip pembangun matriks untuk mengombinasikan JSON ekstraksi menjadi tabel Markdown dan CSV yang terstandarisasi *(Gunakan path absolut dari `build_sota_matrix.py` di direktori instalasi skill ini)*:
   ```bash
-  python skills/paper_matrix_builder/scripts/build_sota_matrix.py --input extractions/ --output-md sota_matrix.md --output-csv sota_matrix.csv
+  python "<PATH_KE_SKILL>/scripts/build_sota_matrix.py" --input extractions/ --output-md sota_matrix.md --output-csv sota_matrix.csv
   ```
 - Tampilkan isi `sota_matrix.md` ke dalam jawaban akhir agen. Format tabel standar:
 | Penulis & Tahun | Pendekatan/Model | Dataset Utama | Parameter Kunci | Metrik Evaluasi | Angka Performa | Celah / Keterbatasan |

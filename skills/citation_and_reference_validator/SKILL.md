@@ -20,13 +20,14 @@ Contoh penggunaan:
 ## Workflow
 
 ### 1. Validasi Metadata Referensi (Programmatic Metadata Integrity Audit)
-- **Eksekusi Guardrail Programatik (WAJIB)**: Sebelum melakukan penilaian manual, agen **WAJIB** mengeksekusi skrip verifikasi otomatis untuk memvalidasi daftar pustaka terhadap API Crossref dan OpenAlex:
+- **Eksekusi Guardrail Programatik (WAJIB)**: Sebelum melakukan penilaian manual, agen **WAJIB** mengeksekusi skrip verifikasi otomatis untuk memvalidasi daftar pustaka terhadap API Crossref dan OpenAlex. 
+  *(Catatan: Tentukan path absolut dari `validate_references.py` berdasarkan lokasi direktori `SKILL.md` ini berada, baik instalasi lokal maupun global)*:
   ```bash
-  python skills/citation_and_reference_validator/scripts/validate_references.py --input references.json --output report.json
+  python "<PATH_KE_SKILL>/scripts/validate_references.py" --input references.json --output report.json
   ```
   atau jalankan secara langsung untuk single DOI/Title:
   ```bash
-  python skills/citation_and_reference_validator/scripts/validate_references.py --doi <DOI> --title "<TITLE>"
+  python "<PATH_KE_SKILL>/scripts/validate_references.py" --doi <DOI> --title "<TITLE>"
   ```
 - Evaluasi luaran `report.json`:
   - **`VALID`**: Metadata terverifikasi resmi oleh database publik (Crossref/OpenAlex).

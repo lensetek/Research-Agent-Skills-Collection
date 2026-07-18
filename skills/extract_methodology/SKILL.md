@@ -25,9 +25,9 @@ Contoh penggunaan:
 
 ### 2. Pengambilan & Pre-parsing Paper (Mandatory Section Filtering)
 - Cari ID paper atau URL paper menggunakan tools pencarian literatur.
-- **Eksekusi Helper Programatik (WAJIB)**: Sebelum melakukan ekstraksi manual, jalankan skrip parser seksi untuk memfilter bagian Metode, Setup, dan Hasil guna mencegah *context overload* pada LLM:
+- **Eksekusi Helper Programatik (WAJIB)**: Sebelum melakukan ekstraksi manual, jalankan skrip parser seksi untuk memfilter bagian Metode, Setup, dan Hasil guna mencegah *context overload* pada LLM *(Gunakan path absolut dari `parse_sections.py` di direktori instalasi skill ini)*:
   ```bash
-  python skills/extract_methodology/scripts/parse_sections.py --input paper_text.md --output sections.json
+  python "<PATH_KE_SKILL>/scripts/parse_sections.py" --input paper_text.md --output sections.json
   ```
 - Evaluasi potongan seksi dari `sections.json` secara mendalam. Jangan berasumsi hanya dari abstrak.
 
