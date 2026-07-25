@@ -30,8 +30,9 @@ Contoh penggunaan:
 - Kumpulkan minimal 5-10 artikel ilmiah dengan metadata valid (judul, penulis, tahun, DOI/URL).
 - **Penting:** Dilarang mengarang artikel fiktif. Jika hasil tidak mencukupi, sampaikan apa adanya ke pengguna.
 
-### 3. Ekstraksi Temuan & Pembuatan Sintesis Matrix
+### 3. Ekstraksi Temuan & Verification Grounding
 - Lakukan sintesis kritis dengan membandingkan temuan antar-paper, menilai kekuatan bukti masing-masing studi (dilihat dari ukuran dataset, ketegasan evaluasi, atau validitas metode), dan mengidentifikasi pola hasil eksperimen.
+- **Verification Grounding (WAJIB)**: Semua klaim temuan utama wajib divalidasi terhadap teks asli paper rujukan menggunakan skrip `fetch_evidence_snippet.py` untuk memastikan bahwa klaim sintesis didukung 100% oleh kutipan verbatim asli paper (*Evidence Snippet*).
 
 ### 4. Penyusunan Laporan Sintesis (Synthesis Report)
 Tulis laporan dengan struktur ilmiah formal sebagai berikut:

@@ -35,23 +35,24 @@ Contoh penggunaan:
   - **`HALLUCINATED`**: DOI atau judul tidak ditemukan di basis data publik manapun. **Wajib langsung ditolak / dibuang dari daftar rujukan.**
 - Tandai referensi yang berstatus `HALLUCINATED` atau `METADATA_MISMATCH` secara eksplisit pada laporan audit.
 
-### 2. Validasi Keselarasan Konteks Kutipan (Contextual Citation Alignment)
-- Ambil kalimat di naskah yang berisi sitasi (misal: *"Model transformer terbukti tidak stabil pada sekuens panjang [1]"*).
-- Baca isi abstrak atau bagian metodologi/hasil dari paper referensi target [1].
-- Analisis apakah kesimpulan atau data pada paper [1] benar-benar mendukung pernyataan tersebut, atau apakah ada penyimpangan pemahaman (salah interpretasi).
-- Klasifikasikan status dukungan:
-  - **Didukung Penuh (Fully Supported)**: Klaim naskah selaras dengan hasil/pernyataan langsung di paper rujukan.
-  - **Didukung Sebagian (Partially Supported)**: Klaim naskah memerlukan modifikasi karena paper rujukan memberikan batasan atau konteks tertentu yang tidak disebutkan di naskah.
-  - **Tidak Didukung / Kontradiktif (Unsupported/Contradictory)**: Paper rujukan tidak membahas isu tersebut atau justru menghasilkan kesimpulan yang bertentangan.
-  - **Salah Sitasi (Misattribution)**: Paper rujukan membahas topik yang berbeda sama sekali.
+### 2. Validasi Keselarasan Konteks Kutipan (Evidence-Based Citation Grounding)
+- **Eksekusi Snippet Fetcher Programatik (WAJIB)**: Untuk mengecek apakah klaim naskah didukung secara faktual oleh isi paper asli, agen **WAJIB** mengeksekusi skrip penarik bukti verbatim:
+  ```bash
+  python "<PATH_KE_SKILL>/scripts/fetch_evidence_snippet.py" --claim "<KALIMAT_KLAIM>" --doi "<DOI>"
+  ```
+- Evaluasi luaran `evidence_snippets` dari skrip Python:
+  - **`FULLY_SUPPORTED`**: Terdapat kutipan verbatim di paper asli yang selaras 100% dengan klaim naskah.
+  - **`PARTIALLY_SUPPORTED`**: Terdapat kutipan relevan tetapi membutuhkan batasan/konteks tambahan di naskah (misal: "hanya berlaku pada dataset X").
+  - **`CONTRADICTORY`**: Kutipan asli paper justru menyatakan hal sebaliknya dari klaim naskah.
+  - **`UNSUPPORTED` / `MISATTRIBUTED`**: Klaim tidak dibahas atau paper membahas topik yang berbeda sama sekali.
 
 ### 3. Pengecekan Gaya Sitasi & Konsistensi (Format Check)
 - Pastikan penulisan sitasi konsisten mengikuti pedoman penulisan tertentu (e.g., APA, IEEE, Harvard, MLA) baik di dalam teks maupun di daftar pustaka.
 - Pastikan semua dokumen yang disitasi di dalam teks tercantum di daftar pustaka, dan sebaliknya.
 
 ### 4. Format Laporan Validasi Rujukan
-Sajikan laporan audit rujukan dalam format tabel wajib berikut:
-| Teks Kalimat / Klaim Naskah | Paper Rujukan (Sitasi) | Validitas Metadata & DOI | Status Dukungan Kontekstual | Catatan Perbaikan |
+Sajikan laporan audit rujukan dalam format tabel bukti wajib berikut:
+| Teks Kalimat / Klaim Naskah | Paper Rujukan (Sitasi & DOI) | Kutipan Verbatim Asli dari Paper (*Evidence Snippet*) | Status Dukungan Kontekstual | Catatan Perbaikan |
 |---|---|---|---|---|
 
 ## Common Mistakes & Aturan Kritis (Anti-Halusinasi Referensi)
