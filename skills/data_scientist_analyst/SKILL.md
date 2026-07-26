@@ -36,10 +36,11 @@ Contoh penggunaan:
   ```bash
   python "<PATH_KE_SKILL>/scripts/run_stat_analysis.py" --input dataset.csv --output stat_report.json
   ```
-3. **Eksplorasi Data (EDA)**: Gunakan angka pasti dari `stat_report.json` untuk menganalisis karakteristik dataset (mean, std, median, null count).
-4. **Penyusunan Script Analisis & ML**: Tulis script Python terstruktur (baik berkas `.py` atau Jupyter Notebook `.ipynb`) untuk memproses data, menjalankan uji statistik inferensial, dan melatih model ML.
-5. **Eksekusi & Evaluasi**: Jalankan script tersebut, tangani error jika ada, dan evaluasi hasil metrik performa (seperti RMSE, R2, F1-Score, ROC-AUC).
-6. **Interpretasi Riset & Visualisasi**: Sajikan kesimpulan akademik berupa narasi ilmiah yang menjelaskan makna fungsional dari angka-angka hasil pemodelan, dan berikan tautan langsung ke berkas grafik visualisasi yang disimpan.
+3. **Hardware Workload Pre-flight Check (Rekomendasi untuk Training Dataset Besar)**: Sebelum melatih model ML berat / deep learning, gunakan skill `hardware-workload-estimator` untuk memeriksa CPU, System RAM, dan VRAM GPU lokal. Jika estimasi waktu > 20 menit atau berisiko OOM, tawarkan migrasi eksekusi ke **Google Colab** via Chrome DevTools MCP.
+4. **Eksplorasi Data (EDA)**: Gunakan angka pasti dari `stat_report.json` untuk menganalisis karakteristik dataset (mean, std, median, null count).
+5. **Penyusunan Script Analisis & ML**: Tulis script Python terstruktur (baik berkas `.py` atau Jupyter Notebook `.ipynb`) untuk memproses data, menjalankan uji statistik inferensial, dan melatih model ML.
+6. **Eksekusi & Evaluasi**: Jalankan script tersebut, tangani error jika ada, dan evaluasi hasil metrik performa (seperti RMSE, R2, F1-Score, ROC-AUC).
+7. **Interpretasi Riset & Visualisasi**: Sajikan kesimpulan akademik berupa narasi ilmiah yang menjelaskan makna fungsional dari angka-angka hasil pemodelan, dan berikan tautan langsung ke berkas grafik visualisasi yang disimpan.
 
 ## Common Mistakes
 - **Data Leakage**: Melakukan proses scaling/normalisasi pada keseluruhan dataset sebelum membaginya menjadi data train dan test.

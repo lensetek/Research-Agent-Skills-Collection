@@ -56,7 +56,10 @@ Agen wajib mengikuti alur eksekusi otomatis 5 fase berikut secara beruntun:
 ### Persiapan Awal (Update Check, Load Profile & Progress Init)
 -1. **Pengecekan Pembaruan Terjadwal (Rate-Limited)**: Baca atribut `last_update_check` di dalam `user_profile.json`. Jalankan `agent-update-checker` **hanya jika** pengecekan terakhir dilakukan lebih dari 7 hari yang lalu (atau jika atribut tersebut belum ada). Jika hari ini sudah dicek, abaikan langkah ini agar tidak membuang waktu.
 0. Periksa apakah berkas `user_profile.json` ada di root direktori proyek. Jika ada, muat preferensi penelitian.
-0b. **Inisialisasi Progress Tracker (WAJIB)**: Jalankan `python bin/progress_tracker.py init --topic "<TOPIC>"` untuk mencatat state 5 fase di `progress.json`. Perbarui state dengan `python bin/progress_tracker.py update` di setiap penyelesaian skill/fase.
+0b. **Inisialisasi Progress Tracker & HITL Checklist (WAJIB)**: 
+   - Jalankan `python bin/progress_tracker.py init --topic "<TOPIC>"` untuk mencatat state 5 fase di `progress.json`.
+   - Jalankan `python "<PATH_KE_SKILL>/scripts/generate_hitl_checklist.py" --project-title "<TOPIC>"` untuk membuat berkas kendali pengguna `hitl_research_checklist.md` di root proyek.
+   - Perbarui status checklist di akhir setiap fase agar pengguna dapat melakukan evaluasi dan persetujuan (*Human-in-the-Loop Sign-Off*).
 
 ### Fase 1: Eksplorasi & Pembingkaian Masalah
 1.  Terima topik/ide awal dari pengguna. Tanyakan secara proaktif apakah pengguna ingin mencari ide berbasis literatur teoritis (**Mode A: Literature-Driven**) atau berbasis dataset sekunder (**Mode B: Dataset-Driven (Data Descriptors)**).
