@@ -38,10 +38,11 @@ Contoh penggunaan:
   ```
 3. **Hardware Workload Pre-flight Check (Rekomendasi untuk Training Dataset Besar)**: Sebelum melatih model ML berat / deep learning, gunakan skill `hardware-workload-estimator` untuk memeriksa CPU, System RAM, dan VRAM GPU lokal. Jika estimasi waktu > 20 menit atau berisiko OOM, tawarkan migrasi eksekusi ke **Google Colab** via Chrome DevTools MCP.
 4. **Eksplorasi Data (EDA)**: Gunakan angka pasti dari `stat_report.json` untuk menganalisis karakteristik dataset (mean, std, median, null count).
-5. **Penyusunan Script Analisis & ML / Otomatisasi GUI Data Software**: 
-   - **Jalur A (Python/R Code)**: Tulis script Python terstruktur (berkas `.py` atau `.ipynb`) untuk memproses data, menjalankan uji statistik inferensial, dan melatih model ML.
-   - **Jalur B (GUI Software Automation - SPSS, EViews, Excel, RapidMiner)**: Jika pengguna meminta pengolahan dilakukan menggunakan software GUI statistik (seperti IBM SPSS, EViews, MS Excel, RapidMiner, Stata, atau SmartPLS), panggil skill `computer-use` untuk mengendalikan antarmuka aplikasi secara otomatis dan mengambil tabel hasilnya.
-6. **Eksekusi & Evaluasi**: Jalankan script atau otomatisasi GUI tersebut, tangani error jika ada, dan evaluasi hasil metrik performa (seperti RMSE, R2, F1-Score, ROC-AUC).
+5. **Penyusunan Script Analisis & Pemodelan Data (3-Tier Execution Hierarchy)**: 
+   - **Tier 1 (Python Native Stack - REKOMENDASI UTAMA)**: Gunakan Python (`pandas`, `statsmodels`, `scipy`, `pyreadstat`, `scikit-learn`). Python mampu membaca file SPSS (`.sav`), Stata (`.dta`), dan Excel (`.xlsx`) secara *native* dan memberikan perhitungan statistik yang 100% akurat tanpa lisensi software komersial.
+   - **Tier 2 (Headless Batch Mode - SPSS/EViews/Stata/Excel)**: Jika pengguna mewajibkan software spesifik, panggil skill `computer-use` untuk mengeksekusi script batch (`.sps`, `.prg`, `.do`) di background via CLI.
+   - **Tier 3 (GUI Computer-Use Vision Fallback)**: Digunakan jika butuh simulasi navigasi antarmuka visual interaktif.
+6. **Eksekusi & Evaluasi**: Jalankan skrip analisis tersebut, evaluasi metrik performa (R2, F1-Score, RMSE, p-value), dan pastikan bebas error.
 7. **Interpretasi Riset & Visualisasi**: Sajikan kesimpulan akademik berupa narasi ilmiah yang menjelaskan makna fungsional dari angka-angka hasil pemodelan, dan berikan tautan langsung ke berkas grafik visualisasi yang disimpan.
 
 ## Common Mistakes

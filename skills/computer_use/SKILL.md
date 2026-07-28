@@ -1,7 +1,7 @@
 ---
 name: computer-use
 description: >-
-  Mengontrol antarmuka GUI desktop dan browser secara otomatis untuk otomasi aplikasi, navigasi visual, serta pengoperasian software pengolah data & statistik (SPSS, EViews, Excel, RapidMiner, Stata, SmartPLS). Menggunakan primary skill stablyai/orca@computer-use dengan mekanisme Auto-Fallback Resilience.
+  Otomatisasi pengolahan data & antarmuka perangkat lunak riset dengan Hierarki 3-Tier: Python Native Stack (Tier 1 Utama), Headless Batch CLI Mode (Tier 2), dan GUI Computer-Use Vision AI Fallback (Tier 3 untuk SPSS, EViews, Excel, Stata, RapidMiner).
 primary_skill: stablyai/orca@computer-use
 fallback_references:
   - name: web-infra-dev/midscene-skills@computer-automation
@@ -12,19 +12,54 @@ fallback_references:
     command: npx skills add am-will/codex-skills@gemini-computer-use
 ---
 
-# Computer Use & GUI Data Software Automation Skill
+# Computer Use & Software Automation Skill (3-Tier Architecture)
 
 ## Overview
-Skill ini memberikan agen kemampuan untuk berinteraksi dengan antarmuka GUI (*Graphical User Interface*) desktop dan browser secara otomatis. Skill ini dikhususkan untuk dua tugas utama:
-1. **Otomatisasi Aplikasi Desktop & Browser Umum**: Menavigasi situs web kompleks, mengambil screenshot, mengklik elemen UI, mengisi form, dan menangani dialog sistem.
-2. **Otomatisasi Software Pengolah Data & Statistik GUI**: Membuka dan mengendalikan software pengolah data populer seperti **IBM SPSS Statistics**, **EViews**, **Microsoft Excel**, **RapidMiner**, **Stata**, dan **SmartPLS** untuk mengeksekusi uji statistik atau pemodelan ML secara otomatis.
+Skill ini bertanggung jawab untuk pengolahan data riset dan otomatisasi antarmuka perangkat lunak pihak ketiga (**IBM SPSS, EViews, MS Excel, Stata, RapidMiner, SmartPLS**). 
 
-Skill ini dikonfigurasikan dengan **Primary Skill (`stablyai/orca@computer-use`)** dan dilengkapi dengan strategi **Auto-Fallback & Auto-Recovery** apabila terjadi hambatan runtime.
+Skill ini mengadopsi **Arsitektur 3-Tier** yang memprioritaskan efisiensi, kecepatan, kebebasan lisensi open-source, dan keandalan deterministik tanpa mengganggu layar pengguna.
 
 ---
 
-## Configuration & Auto-Fallback Resilience
+## Hierarki Rekomendasi 3-Tier (3-Tier Execution Hierarchy)
 
+```mermaid
+flowchart TD
+    A[Menerima Tugas Pengolahan Data Riset] --> B[🥇 TIER 1: Python Native Stack - REKOMENDASI UTAMA]
+    B --> B1[Pandas, Statsmodels, SciPy, Pyreadstat, Scikit-Learn]
+    B1 --> C{Apakah Pengguna Mewajibkan Software Spesifik?}
+    C -- Tidak / Bebas --> E[Eksekusi via Python Native Tier 1 🚀]
+    C -- Ya (Mewajibkan SPSS / EViews / Stata) --> D[🥈 TIER 2: Headless Batch CLI Mode ⚡]
+    D --> D1[SPSS .sps / EViews .prg / Stata .do / Excel Headless]
+    D --> F{Apakah Ada Kendala Headless?}
+    F -- Ya --> G[🥉 TIER 3: GUI Computer-Use Vision AI Fallback 📷]
+```
+
+### 🥇 Tier 1: Python Native Stack (Rekomendasi Utama & Default)
+- **Modul Utilitas**: `pandas`, `statsmodels`, `scipy`, `pyreadstat`, `pingouin`, `scikit-learn`.
+- **Keunggulan**: 
+  - 100% Gratis & Open-Source (tanpa lisensi software pihak ketiga).
+  - Secara *native* mampu membaca dan menulis berkas dataset SPSS (`.sav`), Stata (`.dta`), SAS (`.sas7bdat`), dan Excel (`.xlsx`) via `pyreadstat`.
+  - Menghasilkan perhitungan statistik (p-value, R-squared, t-statistic, F-statistic, regresi panel, ANOVA) yang 100% identik dengan hasil SPSS/EViews/Stata.
+  - Dapat langsung di-offload ke Google Colab jika dataset berskala besar.
+
+---
+
+### 🥈 Tier 2: Headless Batch CLI Mode (Digunakan Jika Pengguna Mewajibkan Software Tertentu)
+Jika pengguna secara khusus meminta/mewajibkan pengolahan via software tertentu:
+1. **IBM SPSS Statistics (.sps)**: 
+   - Eksekusi SPSS Syntax (`.sps`) di background menggunakan `stats.exe -script` tanpa membuka window SPSS GUI.
+2. **EViews (.prg)**: 
+   - Eksekusi EViews Program (`.prg`) atau COM Automation `win32com` (`Visible=False`) untuk regresi ekonometrika di background.
+3. **Microsoft Excel (.xlsx / .vba)**: 
+   - Eksekusi formula & macro VBA via `openpyxl`, `xlwings`, atau `win32com.client` (`Visible=False`).
+4. **Stata (.do)**: 
+   - Eksekusi do-file Stata (`stata-se -b do script.do`) dan baca output `.log` secara background.
+
+---
+
+### 🥉 Tier 3: GUI Computer-Use Vision AI Fallback (Pilihan Terakhir)
+Hanya digunakan jika aplikasi tidak memiliki interface CLI/Batch atau pengguna membutuhkan simulasi visual interaktif:
 ```yaml
 primary_skill: stablyai/orca@computer-use
 fallback_references:
@@ -35,53 +70,14 @@ fallback_references:
     type: gemini-optimized-schema
     command: npx skills add am-will/codex-skills@gemini-computer-use
 ```
-
-### Cara Kerja Auto-Recovery (Recovery Rules)
-1. **Prioritas Eksekusi**: Agen akan selalu mencoba mengeksekusi tindakan menggunakan `stablyai/orca@computer-use` terlebih dahulu.
-2. **Kriteria Kegagalan**: Jika eksekusi mengalami kendala (elemen UI tidak responsif, error permission, screenshot terhenti, atau tombol UI kustom tidak dapat diakses):
-   - Agen **TIDAK Boleh Langsung Berhenti/Error**.
-   - Agen akan membaca daftar `fallback_references` dan mengunduh/memanggil skill fallback secara *on-demand*:
-     ```bash
-     python "<PATH_KE_SKILL>/scripts/computer_use_runner.py" --action trigger-fallback --fallback-index 0
-     ```
-   - Agen melanjutkan tugas menggunakan `web-infra-dev/midscene-skills@computer-automation` (Vision-Based AI) atau `am-will/codex-skills@gemini-computer-use`.
-
----
-
-## Modul Otomatisasi Software Pengolah Data GUI
-
-### 1. IBM SPSS Statistics (.sav, .spv)
-- **Membuka Dataset**: Buka aplikasi SPSS -> File -> Open -> Data (`.sav`).
-- **Eksekusi Analisis**: Navigasi menu `Analyze`:
-  - Regresi Linear: `Analyze -> Regression -> Linear` -> Pilih variabel Dependen & Independen -> Klik OK.
-  - ANOVA / T-Test: `Analyze -> Compare Means -> Independent-Samples T Test / One-Way ANOVA`.
-  - Uji Validitas/Reliabilitas: `Analyze -> Scale -> Reliability Analysis`.
-- **Ekstraksi Hasil**: Tangkap output viewer SPSS, simpan screenshot tabel statistik atau ekspor ke format `.pdf` / `.html` di folder proyek.
-
-### 2. EViews (.wf1, .xlsx)
-- **Membuka Workfile**: Buka EViews -> Open EViews Workfile (`.wf1`) atau Import dari Excel.
-- **Eksekusi Ekonometrika**:
-  - `Quick -> Estimate Equation` -> Masukkan rumus (misal: `Y C X1 X2 X3`).
-  - Uji Stasioneritas (Unit Root Test): `View -> Unit Root Test`.
-  - Uji Kausalitas Granger: `View -> Granger Causality`.
-- **Ekstraksi Hasil**: Tangkap jendela hasil estimasi persamaaan dan simpan angka koefisien, R-squared, t-statistic, dan p-value.
-
-### 3. Microsoft Excel (.xlsx)
-- **Spreadsheet Operations**: Buka berkas Excel, baca/tulis sel, buat formula.
-- **Data Analysis Toolpak**: Jalankan menu `Data -> Data Analysis` (Regression, ANOVA, Descriptive Statistics).
-- **Chart Generation**: Ekstrak atau simpan grafik visualisasi ke format gambar.
-
-### 4. RapidMiner, SmartPLS & Stata
-- **RapidMiner**: Buka repositori proses (`.rmp`), jalankan workflow visual ML, ekstrak metrik evaluasi (Accuracy, Precision, Recall, AUC).
-- **SmartPLS**: Buka proyek PLS-SEM, jalankan `Calculate -> PLS-SEM Algorithm / Bootstrapping`, tangkap hasil Outer Loadings, R-Square, dan Path Coefficients.
-- **Stata**: Jalankan command window Stata atau do-file (`.do`), ambil output regresi panel / time-series.
+- **Cara Kerja Auto-Recovery**: Jika `stablyai/orca@computer-use` mengalami kendala identifikasi elemen UI, agen secara otomatis (*on-demand*) memanggil `web-infra-dev/midscene-skills@computer-automation` (Vision-Based AI) atau `am-will/codex-skills@gemini-computer-use`.
 
 ---
 
 ## Workflow Standard
 
-1. **Identifikasi Aplikasi & Target**: Tentukan apakah tugas membutuhkan otomatisasi browser/desktop umum atau otomatisasi software pengolah data GUI (SPSS/EViews/Excel/RapidMiner).
-2. **Inisialisasi & Diagnostic Check**: Jalankan pengecekan ketersediaan aplikasi dan layar desktop.
-3. **Eksekusi Primary Skill (`stablyai/orca@computer-use`)**: Jalankan instruksi aksi GUI (move mouse, click, write text, screenshot, inspect output).
-4. **Auto-Recovery Guardrail**: Jika aksi gagal atau tertahan di elemen UI kustom, panggil fallback `midscene-skills@computer-automation` untuk analisis visual berbasis AI vision.
-5. **Ekstraksi & Penyimpanan Hasil**: Simpan hasil tabel, angka statistik, atau screenshot bukti eksekusi ke folder proyek.
+1. **Analisis Kebutuhan**: Pahami apakah pengguna membebaskan metode analisis atau mewajibkan software tertentu (SPSS/EViews/Stata/Excel).
+2. **Jalankan Tier 1 (Python Native Stack)**: Secara default, gunakan Python dengan `pyreadstat` untuk membaca dataset (`.sav`/`.xlsx`/`.dta`) dan `statsmodels`/`scipy` untuk analisis.
+3. **Jalankan Tier 2 (Headless Batch Mode)**: Jika software tertentu diwajibkan, susun berkas script batch (`.sps`, `.prg`, `.do`) dan eksekusi via CLI background.
+4. **Jalankan Tier 3 (GUI Computer-Use Fallback)**: Jika interaksi visual interaktif diperlukan, gunakan `stablyai/orca@computer-use` dengan auto-fallback vision AI.
+5. **Penyimpanan Hasil**: Simpan tabel statistik, grafik, dan log hasil pengolahan data secara rapi di direktori proyek.
