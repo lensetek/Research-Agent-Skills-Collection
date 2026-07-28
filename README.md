@@ -5,6 +5,8 @@
 ---
 
 ### 🔥 What's New / Yang Baru (July 2026)
+* **🇮🇩 Computer Use & GUI Data Software Automation - NEW**: Menambahkan skill `computer-use` (Primary Skill: `stablyai/orca@computer-use`) dengan strategi **Auto-Fallback Resilience** (`midscene-skills@computer-automation`, `gemini-computer-use`). Mampu mengotomatiskan GUI desktop, browser, dan software pengolah data & statistik populer seperti **IBM SPSS, EViews, Microsoft Excel, RapidMiner, Stata, dan SmartPLS**.
+* **🇬🇧 Computer Use & GUI Data Software Automation - NEW**: Added the `computer-use` skill (Primary Skill: `stablyai/orca@computer-use`) with an **Auto-Fallback Resilience** strategy (`midscene-skills@computer-automation`, `gemini-computer-use`). Automates desktop GUIs, browsers, and popular data analysis/statistics software such as **IBM SPSS, EViews, Microsoft Excel, RapidMiner, Stata, and SmartPLS**.
 * **🇮🇩 End-to-End Human-in-the-Loop (HITL) Research Checklist - NEW**: Mengintegrasikan sistem checklist `hitl_research_checklist.md` otomatis di seluruh siklus 5-fase riset. Memastikan kendali pengguna penuh atas privasi data, keputusan hardware komputasi, validasi metodologi statistik, hingga persetujuan submit jurnal.
 * **🇬🇧 End-to-End Human-in-the-Loop (HITL) Research Checklist - NEW**: Integrated an automatic `hitl_research_checklist.md` system across the full 5-phase research lifecycle, ensuring total user control over data privacy, compute hardware decisions, statistical methodology validations, and final journal submission approvals.
 * **🇮🇩 Hardware Workload Estimator & Colab Advisor - NEW**: Menambahkan skill `hardware-workload-estimator` untuk melakukan *micro dry-run* diagnostik komputasi (CPU/RAM/GPU lokal), mengestimasi potensi *Out-Of-Memory* (OOM), serta otomatis menyusun dan menyiapkan notebook Google Colab GPU (melalui Chrome DevTools MCP) bila eksekusi lokal terlalu berat.
@@ -30,7 +32,7 @@
 
 ## Bahasa Indonesia
 
-### Kumpulan Skill yang Tersedia (24 Skills)
+### Kumpulan Skill yang Tersedia (26 Skills)
 
 #### 🚀 Orkestrator Utama (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Pintu masuk utama untuk menjalankan alur kerja riset 5 fase otomatis penuh (termasuk personalisasi implisit) secara sekuensial.
@@ -45,7 +47,8 @@
 5.  **[synthetic-data-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthetic_data_generator/SKILL.md)**: Bertindak sebagai Digital Twin / Persona Simulator untuk meng-generate dataset sintetis offline serta menyimulasikan pengisian kuesioner online (seperti Google Forms) via Chrome DevTools MCP.
 6.  **[data-acquisition-specialist](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_acquisition_specialist/SKILL.md)**: Mencari, mengumpulkan, dan melakukan web scraping data dengan strategi hibrida (API/HTTP cepat dengan fallback ke browser headless Chrome DevTools MCP jika terblokir).
 7.  **[hardware-workload-estimator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hardware_workload_estimator/SKILL.md)**: Mengecek spesifikasi komputasi lokal, mengestimasi beban training ML (*micro dry-run*), dan memberikan rekomendasi serta otomatisasi Google Colab via Chrome DevTools MCP.
-8.  **[data-scientist-analyst](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_scientist_analyst/SKILL.md)**: Memproses, menganalisis, menguji statistik (regresi, PLS), melatih model Machine Learning, dan membuat visualisasi data ilmiah secara terstruktur.
+8.  **[computer-use](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/computer_use/SKILL.md)**: Otomatisasi GUI desktop, browser, dan software pengolah data & statistik (SPSS, EViews, Excel, RapidMiner, Stata, SmartPLS) dengan strategi Primary & Auto-Fallback Resilience.
+9.  **[data-scientist-analyst](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_scientist_analyst/SKILL.md)**: Memproses, menganalisis, menguji statistik (regresi, PLS), melatih model Machine Learning, dan membuat visualisasi data ilmiah secara terstruktur.
 9.  **[model-evaluator-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/model_evaluator_validator/SKILL.md)**: Mengevaluasi dan memvalidasi signifikansi statistik (T-Test, ANOVA, Diebold-Mariano) dari hasil prediksi model guna memastikan ketangguhan riset.
 
 #### 📁 Fase 3 — Literature Intelligence (Kajian & Validasi)
@@ -78,7 +81,7 @@
 
 
 
-### Available Skills (24 Skills)
+### Available Skills (26 Skills)
 
 #### 🚀 Main Orchestrator (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 5-phase research workflow sequentially and automatically (including implicit personalization).
@@ -92,7 +95,9 @@
 4.  **[research-design-planner](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_design_planner/SKILL.md)**: Designs methodologies (quantitative, qualitative, mixed-methods, computational AI/ML experiments) with validations, robustness checks, and ablation plans.
 5.  **[synthetic-data-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthetic_data_generator/SKILL.md)**: Acts as a Digital Twin / Persona Simulator to generate offline synthetic datasets and automate online questionnaire filling (e.g. Google Forms) via Chrome DevTools MCP.
 6.  **[data-acquisition-specialist](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_acquisition_specialist/SKILL.md)**: Collects and scrapes web data using a hybrid strategy (fast HTTP/API mode with automatic fallback to Chrome DevTools MCP browser automation when blocked).
-7.  **[data-scientist-analyst](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_scientist_analyst/SKILL.md)**: Processes, analyzes, performs statistical testing (regression, PLS), trains Machine Learning models, and creates structured scientific data visualizations.
+7.  **[hardware-workload-estimator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hardware_workload_estimator/SKILL.md)**: Checks local compute hardware specs, estimates ML training workload (*micro dry-run*), and provides Google Colab GPU recommendations and automation via Chrome DevTools MCP.
+8.  **[computer-use](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/computer_use/SKILL.md)**: Desktop GUI, browser, and data software automation (SPSS, EViews, Excel, RapidMiner, Stata, SmartPLS) using Primary & Auto-Fallback Resilience strategies.
+9.  **[data-scientist-analyst](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_scientist_analyst/SKILL.md)**: Processes, analyzes, performs statistical testing (regression, PLS), trains Machine Learning models, and creates structured scientific data visualizations.
 8.  **[model-evaluator-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/model_evaluator_validator/SKILL.md)**: Evaluates and validates the statistical significance (T-Test, ANOVA, Diebold-Mariano) of model predictions to ensure research robustness.
 
 #### 📁 Phase 3 — Literature Intelligence (Review & Audit)

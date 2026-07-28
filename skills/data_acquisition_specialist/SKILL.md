@@ -23,7 +23,8 @@ Sesuai arahan pengguna, agen dibekali **kebebasan penuh** dalam mengimplementasi
 2. **Dynamic Content & Bot Protection Fallback (Robustness Second)**: Jika data dimuat secara dinamis via JavaScript, situs dilindungi bot protection (seperti Cloudflare dasar), atau memerlukan interaksi UI yang kompleks:
    - **WAJIB** beralih (*fallback*) ke browser automation menggunakan MCP server `chrome-devtools`.
    - Gunakan tool seperti `puppeteer_navigate`, `puppeteer_click`, atau `network_get_requests` untuk menginspeksi network payloads secara dinamis tanpa memparsing DOM kasar jika memungkinkan.
-3. **Structured Storage**: Data hasil ekstraksi/scraping wajib disimpan secara rapi di dalam direktori proyek dalam format terstruktur: `.csv`, `.json`, atau database `.sqlite` (disesuaikan dengan ukuran data).
+3. **Advanced GUI & Desktop App Fallback (Extreme Protection)**: Jika akses scraping terhalang oleh captchas tingkat tinggi, verifikasi perangkat lunak desktop, atau memerlukan otomatisasi antarmuka GUI aplikasi khusus, manfaatkan skill `computer-use` (`stablyai/orca@computer-use` dengan auto-fallback vision AI) untuk mengendalikan mouse/keyboard secara langsung.
+4. **Structured Storage**: Data hasil ekstraksi/scraping wajib disimpan secara rapi di dalam direktori proyek dalam format terstruktur: `.csv`, `.json`, atau database `.sqlite` (disesuaikan dengan ukuran data).
 4. **Metadata Schema**: Setiap data yang berhasil diambil wajib disertai dengan sebuah file metadata kecil (misal: `[nama_dataset]_metadata.json`) yang mendokumentasikan:
    - Sumber URL asal.
    - Tanggal pengambilan data.

@@ -7,33 +7,35 @@ description: >-
 # Research Orchestrator (Starter Skill)
 
 ## Overview
-Skill ini adalah pintu masuk utama (*starter/entry point*) untuk mengotomatiskan seluruh alur kerja riset pada **Research-Agent**. Ketika pengguna mengaktifkan skill ini dengan memberikan ide riset kasar atau domain umum, agen akan mengorkestrasikan dan memanggil 16 skill pendukung lainnya secara berurutan, mengirimkan output dari satu tahap sebagai input ke tahap berikutnya, dan menyajikan laporan akhir berupa *Research Dashboard* terintegrasi.
+Skill ini adalah pintu masuk utama (*starter/entry point*) untuk mengotomatiskan seluruh alur kerja riset pada **Research-Agent**. Ketika pengguna mengaktifkan skill ini dengan memberikan ide riset kasar atau domain umum, agen akan mengorkestrasikan dan memanggil 23 skill pendukung lainnya secara berurutan, mengirimkan output dari satu tahap sebagai input ke tahap berikutnya, dan menyajikan laporan akhir berupa *Research Dashboard* terintegrasi.
 
 Secara khusus, skill ini mendukung **Implicit Personalization**. Di awal eksekusi, agen wajib memeriksa keberadaan berkas `user_profile.json` di root direktori untuk memuat preferensi pengguna. Di akhir eksekusi, agen akan menganalisis umpan balik pengguna dan memperbarui berkas tersebut secara otomatis.
 
 ## Dependencies
-Skill ini mengoordinasikan eksekusi dari 21 skill berikut:
+Skill ini mengoordinasikan eksekusi dari 23 skill berikut:
 1. `discover-phenomenon-and-gap`
 2. `research-question-builder`
 3. `hypothesis-or-proposition-builder`
 4. `research-design-planner`
 5. `synthetic-data-generator`
 6. `data-acquisition-specialist`
-7. `data-scientist-analyst`
-8. `model-evaluator-validator`
-9. `literature-review-generator`
-10. `extract-methodology`
-11. `source-quality-appraiser`
-12. `citation-and-reference-validator`
-13. `paper-matrix-builder`
-14. `synthesize-research`
-15. `patent-and-literature-matcher`
-16. `journal-recommendation-finder`
-17. `journal-template-formatter`
-18. `academic-peer-reviewer`
-19. `reviewer-response-and-revision`
-20. `obsidian-vault-exporter`
-21. `agent-update-checker`
+7. `hardware-workload-estimator`
+8. `computer-use`
+9. `data-scientist-analyst`
+10. `model-evaluator-validator`
+11. `literature-review-generator`
+12. `extract-methodology`
+13. `source-quality-appraiser`
+14. `citation-and-reference-validator`
+15. `paper-matrix-builder`
+16. `synthesize-research`
+17. `patent-and-literature-matcher`
+18. `journal-recommendation-finder`
+19. `journal-template-formatter`
+20. `academic-peer-reviewer`
+21. `reviewer-response-and-revision`
+22. `obsidian-vault-exporter`
+23. `agent-update-checker`
 
 ## Quick Start
 Contoh penggunaan:
