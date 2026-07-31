@@ -36,12 +36,18 @@ Contoh penggunaan:
 - Identifikasi bagian opsional/wajib tambahan yang biasanya diminta oleh penerbit (seperti *Conflict of Interest*, *Acknowledgment*, *Author Contributions*, *Funding Information*).
 - Berikan peringatan atau catatan kepada pengguna jika komponen ini belum ada dalam draf asli agar pengguna dapat melengkapinya.
 
-### 5. Penyusunan Output & Delegasi Format
+### 5. Standar Pemformatan Dokumen MS Word (.docx)
+Jika luaran diproduksi atau diekspor ke format MS Word (`.docx`), wajib mematuhi standar gaya bawaan Word (*Built-in Word Styles*):
+- **Paragraf `Normal` (Body Text):** Wajib menggunakan **Justified Alignment (Rata Kiri-Kanan)** (`w:jc w:val="both"`), Line Spacing **1.15 - 1.5**, dan **Space After 6pt** (mencegah double enter manual).
+- **Hierarki `Heading 1` s/d `Heading 4`:** Wajib menggunakan Native Word Headings (terhubung dengan Navigation Pane & TOC) dengan properti `keep_with_next = True` agar judul tidak pernah terpisah di bagian bawah halaman.
+
+### 6. Penyusunan Output & Delegasi Format
 - Sajikan naskah hasil pemformatan akhir yang bersih, rapi, dan siap dipublikasikan.
 - Jika pengguna meminta atau membutuhkan keluaran dalam bentuk LaTeX, delegasikan proses konversi dokumen Markdown ke LaTeX menggunakan skill `markdown-to-latex-converter`.
 
 ## Common Mistakes & Aturan Kritis
 - **Mengubah Konten Ilmiah**: DILARANG keras memodifikasi data eksperimen, hasil analisis, tabel data, gambar, makna kalimat, atau klaim ilmiah utama dari naskah asli. Pemformatan hanya fokus pada tata letak, struktur, dan gaya sitasi.
+- **Teks Flushing Left (Tanpa Justified)**: Menghasilkan dokumen `.docx` dengan teks paragraf biasa rata kiri tanpa pemformatan gaya `Normal` yang disetel Justified rata kiri-kanan.
 - **Perubahan Tanpa Transparansi**: Melakukan penyuntingan bahasa (copyediting) atau penyempurnaan kalimat tanpa menunjukkannya kepada pengguna secara jelas. Perubahan bahasa minor diperbolehkan untuk keselarasan akademis, namun substansi harus dipertahankan secara utuh.
 - **Format Sitasi Tidak Konsisten**: Mencampuradukkan gaya sitasi (misal, sebagian memakai angka gaya IEEE dan sebagian memakai nama-tahun gaya APA) dalam satu naskah. Semua sitasi wajib dirapikan secara seragam.
 - **Mengabaikan Pedoman Batas Kata**: Membiarkan abstrak atau konten utama melebihi batas jumlah kata yang telah ditentukan dalam Author Guidelines jurnal target.

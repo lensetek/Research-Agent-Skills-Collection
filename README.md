@@ -49,39 +49,38 @@
 7.  **[hardware-workload-estimator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hardware_workload_estimator/SKILL.md)**: Mengecek spesifikasi komputasi lokal, mengestimasi beban training ML (*micro dry-run*), dan memberikan rekomendasi serta otomatisasi Google Colab via Chrome DevTools MCP.
 8.  **[computer-use](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/computer_use/SKILL.md)**: Otomatisasi GUI desktop, browser, dan software pengolah data & statistik (SPSS, EViews, Excel, RapidMiner, Stata, SmartPLS) dengan strategi Primary & Auto-Fallback Resilience.
 9.  **[data-scientist-analyst](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_scientist_analyst/SKILL.md)**: Memproses, menganalisis, menguji statistik (regresi, PLS), melatih model Machine Learning, dan membuat visualisasi data ilmiah secara terstruktur.
-9.  **[model-evaluator-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/model_evaluator_validator/SKILL.md)**: Mengevaluasi dan memvalidasi signifikansi statistik (T-Test, ANOVA, Diebold-Mariano) dari hasil prediksi model guna memastikan ketangguhan riset.
+10. **[model-evaluator-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/model_evaluator_validator/SKILL.md)**: Mengevaluasi dan memvalidasi signifikansi statistik (T-Test, ANOVA, Diebold-Mariano) dari hasil prediksi model guna memastikan ketangguhan riset.
+11. **[codebase-knowledge-graph](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/codebase_knowledge_graph/SKILL.md)**: Memetakan arsitektur repositori, skema basis data, dan proyek ke Knowledge Graph terstruktur menggunakan Graphify (Tree-sitter parsing & 10 MCP Tools) dengan isolasi multi-proyek dan standar Word Styles (`Normal` Justified & Headings).
 
 #### 📁 Fase 3 — Literature Intelligence (Kajian & Validasi)
-9.  **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Penyusunan draf tinjauan pustaka bertema dengan mode khusus (Narrative, SLR, Thematic, Chronological, Critical) dan Peta Argumen.
-10. **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Membedah paper untuk ekstraksi 10 komponen teknis wajib (tujuan, parameter, dataset, dll.).
-11. **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Menilai kuartil jurnal (Q1-Q4), peringkat konferensi (CORE), bias metodologis, dan status kelayakan rujukan.
-12. **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audit keaslian rujukan (DOI) dan memvalidasi dukungan kontekstual kalimat rujukan (mencegah salah sitasi).
-13. **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Mengotomatiskan pembuatan tabel ringkasan komparasi State-of-the-Art (SotA) dan peta bukti (*evidence map*).
+12. **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Penyusunan draf tinjauan pustaka bertema dengan mode khusus (Narrative, SLR, Thematic, Chronological, Critical) dan Peta Argumen.
+13. **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Membedah paper untuk ekstraksi 10 komponen teknis wajib (tujuan, parameter, dataset, dll.).
+14. **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Menilai kuartil jurnal (Q1-Q4), peringkat konferensi (CORE), bias metodologis, dan status kelayakan rujukan.
+15. **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audit keaslian rujukan (DOI) dan memvalidasi dukungan kontekstual kalimat rujukan (mencegah salah sitasi).
+16. **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Mengotomatiskan pembuatan tabel ringkasan komparasi State-of-the-Art (SotA) dan peta bukti (*evidence map*).
 
 #### 📁 Fase 4 — Synthesis, Novelty & Publication (Sintesis, Publikasi & Vault Exporter)
-14. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Analisis komparasi temuan kritis, memetakan konsensus & kontradiksi, serta memisahkan opini dari bukti rujukan.
-15. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Mendeteksi potensi *prior art* dengan mencocokkan komponen klaim invensi terhadap literatur ilmiah.
-16. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Mencari jurnal target terbaik berdasarkan kuartil, relevansi scope, biaya APC, dan turnaround time (bebas jurnal predator).
-17. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulasi peer review independen (Accept/Revision/Reject) dengan daftar masalah mayor/minor.
-18. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Memformulasikan draf jawaban diplomatis *Response to Reviewers* dan merencanakan revisi naskah secara konsisten.
-19. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Memparafrase dan menghumanisasi teks akademik secara struktural untuk menghindari plagiasi dan menjaga makna asli.
-20. **[advanced-similarity-reducer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/advanced_similarity_reducer/SKILL.md)**: Skill tingkat lanjut (ultra-advance) untuk merombak total struktur paragraf secara konseptual guna menurunkan skor similarity (Turnitin) secara ekstrem tanpa mengubah makna.
-21. **[journal-template-formatter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_template_formatter/SKILL.md)**: Bertugas mengubah, menyusun, dan memformat draf makalah riset menjadi format jurnal penelitian sesuai dengan panduan penulis (Author Guidelines) atau template yang dituju.
-22. **[obsidian-vault-exporter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/obsidian_vault_exporter/SKILL.md)**: Bertugas mentransformasikan dan mengespor luaran riset ke dalam berkas Markdown Obsidian-native lengkap dengan YAML Frontmatter terstruktur, *WikiLinks* 2 arah, tag, serta query Dataview.
+17. **[synthesize-research](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/synthesize_research/SKILL.md)**: Analisis komparasi temuan kritis, memetakan konsensus & kontradiksi, serta memisahkan opini dari bukti rujukan.
+18. **[patent-and-literature-matcher](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/patent_and_literature_matcher/SKILL.md)**: Mendeteksi potensi *prior art* dengan mencocokkan komponen klaim invensi terhadap literatur ilmiah.
+19. **[journal-recommendation-finder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_recommendation_finder/SKILL.md)**: Mencari jurnal target terbaik berdasarkan kuartil, relevansi scope, biaya APC, dan turnaround time (bebas jurnal predator).
+20. **[academic-peer-reviewer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_peer_reviewer/SKILL.md)**: Simulasi peer review independen (Accept/Revision/Reject) dengan daftar masalah mayor/minor.
+21. **[reviewer-response-and-revision](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/reviewer_response_and_revision/SKILL.md)**: Memformulasikan draf jawaban diplomatis *Response to Reviewers* dan merencanakan revisi naskah secara konsisten.
+22. **[academic-paraphraser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/academic_paraphraser/SKILL.md)**: Memparafrase dan menghumanisasi teks akademik secara struktural untuk menghindari plagiasi dan menjaga makna asli.
+23. **[advanced-similarity-reducer](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/advanced_similarity_reducer/SKILL.md)**: Skill tingkat lanjut (ultra-advance) untuk merombak total struktur paragraf secara konseptual guna menurunkan skor similarity (Turnitin) secara ekstrem tanpa mengubah makna.
+24. **[journal-template-formatter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/journal_template_formatter/SKILL.md)**: Bertugas mengubah, menyusun, dan memformat draf makalah riset menjadi format jurnal penelitian sesuai dengan panduan penulis (Author Guidelines) atau template yang dituju.
+25. **[obsidian-vault-exporter](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/obsidian_vault_exporter/SKILL.md)**: Bertugas mentransformasikan dan mengespor luaran riset ke dalam berkas Markdown Obsidian-native lengkap dengan YAML Frontmatter terstruktur, *WikiLinks* 2 arah, tag, serta query Dataview.
 
 #### 📁 Fase 5 — Personalization & Memori (Personalisasi)
-23. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): Berkas profil penelitian pengguna yang diperbarui secara implisit oleh orkestrator di akhir sesi untuk menyimpan gaya penulisan, target jurnal, dan preferensi riset.
+26. **[user_profile.json](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/user_profile.json)** (Root): Berkas profil penelitian pengguna yang diperbarui secara implisit oleh orkestrator di akhir sesi untuk menyimpan gaya penulisan, target jurnal, dan preferensi riset.
 
 #### 🔧 Utilitas (Maintenance & Update)
-24. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Bertugas mengecek pembaruan agen secara berkala dari repositori dan menawarkan instalasi pembaruan melalui prompt URL.
+27. **[agent-update-checker](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/agent_update_checker/SKILL.md)**: Bertugas mengecek pembaruan agen secara berkala dari repositori dan menawarkan instalasi pembaruan melalui prompt URL.
 
 ---
 
 ## English
 
-
-
-### Available Skills (26 Skills)
+### Available Skills (27 Skills)
 
 #### 🚀 Main Orchestrator (Starter Skill)
 *   **[research-orchestrator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/research_orchestrator/SKILL.md)**: Main entry point to run the full 5-phase research workflow sequentially and automatically (including implicit personalization).
@@ -98,13 +97,10 @@
 7.  **[hardware-workload-estimator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/hardware_workload_estimator/SKILL.md)**: Checks local compute hardware specs, estimates ML training workload (*micro dry-run*), and provides Google Colab GPU recommendations and automation via Chrome DevTools MCP.
 8.  **[computer-use](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/computer_use/SKILL.md)**: Desktop GUI, browser, and data software automation (SPSS, EViews, Excel, RapidMiner, Stata, SmartPLS) using Primary & Auto-Fallback Resilience strategies.
 9.  **[data-scientist-analyst](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/data_scientist_analyst/SKILL.md)**: Processes, analyzes, performs statistical testing (regression, PLS), trains Machine Learning models, and creates structured scientific data visualizations.
-8.  **[model-evaluator-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/model_evaluator_validator/SKILL.md)**: Evaluates and validates the statistical significance (T-Test, ANOVA, Diebold-Mariano) of model predictions to ensure research robustness.
+10. **[model-evaluator-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/model_evaluator_validator/SKILL.md)**: Evaluates and validates the statistical significance (T-Test, ANOVA, Diebold-Mariano) of model predictions to ensure research robustness.
+11. **[codebase-knowledge-graph](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/codebase_knowledge_graph/SKILL.md)**: Maps codebase, database schemas, and project architectures into a queryable Knowledge Graph using Graphify (Tree-sitter parsing & 10 MCP Tools) with multi-project isolation and Word Built-in Styles (Normal Justified & Headings).
 
 #### 📁 Phase 3 — Literature Intelligence (Review & Audit)
-9.  **[literature-review-generator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/literature_review_generator/SKILL.md)**: Generates structured, themed literature reviews using specific modes (Narrative, SLR, Thematic, Chronological, Critical) with Argument Maps.
-10. **[extract-methodology](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/extract_methodology/SKILL.md)**: Dissects papers to extract 10 mandatory technical components (objectives, parameters, datasets, metrics, etc.).
-11. **[source-quality-appraiser](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/source_quality_appraiser/SKILL.md)**: Appraises journal quartiles (Q1-Q4), conference rankings (CORE), methodological flaws, bias risks, and overall reference eligibility.
-12. **[citation-and-reference-validator](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/citation_and_reference_validator/SKILL.md)**: Audits citation metadata (DOIs) and validates contextual citation support (preventing misattribution/fake citations).
 13. **[paper-matrix-builder](file:///C:/Users/ACER/Documents/antigravity/Research-Agent/skills/paper_matrix_builder/SKILL.md)**: Automates the creation of standardized State-of-the-Art (SotA) matrices and evidence maps.
 
 #### 📁 Phase 4 — Synthesis, Novelty & Publication (Synthesis, Publishing & Vault Exporter)
