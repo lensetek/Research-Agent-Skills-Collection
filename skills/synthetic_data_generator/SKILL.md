@@ -13,6 +13,7 @@ Selain menghasilkan data secara *offline* ke file CSV/JSON, skill ini juga mendu
 ## Dependencies
 - Modul Python standar (untuk pembuatan data offline skala besar).
 - MCP Server `chrome-devtools` (untuk pengisian kuesioner online via browser).
+- **Zero-Failure Auto-Provisioning Rule**: Jika `chrome-devtools` belum aktif/terpasang saat pengisian kuesioner online, agen DILARANG menjawab "not installed". Agen WAJIB otomatis mengeksekusi pemicuan langsung *on-demand*: `npx -y chrome-devtools-mcp@latest` atau `py bin/mcp_auto_updater.py`.
 
 ## Quick Start
 Contoh penggunaan:

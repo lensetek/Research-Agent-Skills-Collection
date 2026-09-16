@@ -1,36 +1,56 @@
 ---
 name: agent-update-checker
 description: >-
-  Bertugas untuk mengecek pembaruan (update) agent skills terbaru dari repositori GitHub dan mengonfirmasi pengguna apakah ingin mengunduh versi terbaru.
+  Bertugas untuk mengecek pembaruan (update) agent skills terbaru dari repositori GitHub serta memeriksa dan memperbarui paket otomatisasi Chrome DevTools MCP & Windows MCP (cursortouch/windows-mcp) secara terintegrasi.
 ---
 
-# Agent Update Checker
+# Agent Update Checker & Multi-MCP Auto-Updater
 
 ## Overview
-Skill ini bertugas sebagai sistem pemeliharaan (maintenance) untuk memastikan bahwa pengguna selalu memiliki versi kumpulan skill **Research-Agent** yang paling mutakhir. Skill ini dapat dipanggil secara manual melalui prompt untuk mengecek adanya versi terbaru di repositori resmi GitHub.
+Skill ini bertugas sebagai sistem pemeliharaan (*maintenance*) terpusat untuk memastikan bahwa seluruh kumpulan skill **Research-Agent** serta dependensi MCP kunci (**Chrome DevTools MCP** dan **Windows MCP**) selalu berada dalam versi terbaru dan siap pakai tanpa risiko error *"package not installed"*.
 
 ## Dependencies
-Tidak ada dependensi khusus. Agen dapat membaca URL secara langsung.
+- Skrip pembantu Python: `bin/mcp_auto_updater.py` (untuk memeriksa & menginstal 3 entitas secara otomatis).
 
 ## Quick Start
 Contoh penggunaan:
-*"Gunakan skill agent-update-checker untuk mengecek apakah ada versi terbaru dari kumpulan skill agen ini."*
+> *"Gunakan skill agent-update-checker untuk mengecek apakah ada versi terbaru dari agent skills, Chrome DevTools MCP, dan Windows MCP."*
+
+---
 
 ## Workflow
 
-### 1. Pengecekan Versi Terbaru
-- Agen mengakses URL repositori resmi: `https://github.com/lensetek/Research-Agent-Skills-Collection`.
-- Analisis bagian utama repositori (seperti riwayat *commit* terakhir, atau teks *What's New* di README.md) untuk melihat apakah ada perubahan baru dibandingkan yang saat ini dimiliki pengguna.
+### 1. Eksekusi Pengecekan Terintegrasi (3-Entity Check)
+Agen mengeksekusi skrip pemeriksaan terpadu melalui terminal:
+```bash
+py bin/mcp_auto_updater.py --check --json
+```
+Skrip ini akan memeriksa 3 entitas secara simultan:
+1. **Research-Agent-Skills-Collection:** Repositori skill utama di GitHub (`https://github.com/lensetek/Research-Agent-Skills-Collection`).
+2. **Chrome DevTools MCP (`chrome-devtools-mcp`):** Memeriksa ketersediaan paket `npx -y chrome-devtools-mcp@latest`.
+3. **Windows MCP (`cursortouch/windows-mcp`):** Memeriksa ketersediaan paket `uvx windows-mcp` / `pip install windows-mcp` di OS Windows.
 
-### 2. Konfirmasi ke Pengguna
-- Berikan laporan singkat kepada pengguna: *"Saat ini terdapat pembaruan baru di repositori utama..."* beserta rincian singkat fitur apa yang baru.
-- Tanyakan secara eksplisit kepada pengguna: **"Apakah Anda ingin saya mengunduh dan memperbarui versi agent skill Anda ke versi terbaru ini?"**
+### 2. Pelaporan & Konfirmasi ke Pengguna
+- Berikan laporan ringkas mengenai status ketiga paket tersebut kepada pengguna:
+  > *"Hasil Pengecekan Pembaruan:*  
+  > *1. Agent Skills Repo: Terdapat commit/fitur baru.*  
+  > *2. Chrome DevTools MCP: Siap dipicu via npx -y chrome-devtools-mcp@latest.*  
+  > *3. Windows MCP: Siap dipicu via uvx windows-mcp serve.*"
+- Tanyakan secara eksplisit kepada pengguna: **"Apakah Anda ingin saya mengunduh dan memperbarui seluruh versi agent skill dan paket MCP ke versi paling mutakhir?"**
 
-### 3. Eksekusi Pembaruan (Jika Disetujui)
-- Jika pengguna menjawab "Ya" atau setuju, jalankan proses instalasi/pembaruan sederhana dengan cara meminta pengguna memicu prompt instalasi ulang dari URL, atau agen langsung memproses pengunduhan ulang.
-- Prompt instruksi pengunduhan standar:
-  > *"Tolong download dan install update agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection"*
+### 3. Eksekusi Pembaruan Terpadu (Jika Disetujui)
+Jika pengguna menjawab "Ya" atau menyetujui pembaruan:
+1. **Update MCP Dependencies:**
+   ```bash
+   py bin/mcp_auto_updater.py --update
+   ```
+2. **Update Agent Skills Collection:**
+   Agen meminta pengguna atau mengeksekusi pengunduhan ulang dari URL repositori utama:
+   > *"Tolong download dan install update agent skill dari url https://github.com/lensetek/Research-Agent-Skills-Collection"*
+
+---
 
 ## Common Mistakes & Aturan Kritis
-- **Overwrite Tanpa Izin**: Dilarang keras menimpa (overwrite) atau mengunduh pembaruan tanpa ada konfirmasi "Ya" dari pengguna. Selalu tanyakan dulu.
-- **Menghapus Konfigurasi Personal**: Ingatkan pengguna (atau pastikan sistem agen) bahwa pembaruan ini tidak boleh menghapus atau me-reset berkas personalisasi seperti `user_profile.json` atau kredensial rahasia di `.env`.
+- **Overwrite Tanpa Izin**: Dilarang keras menimpa (*overwrite*) atau mengunduh pembaruan tanpa ada konfirmasi "Ya" dari pengguna. Selalu tanyakan dulu.
+- **Menghapus Konfigurasi Personal**: Pembaruan ini DILARANG me-reset berkas personalisasi seperti `user_profile.json` atau kredensial rahasia di `.env`.
+- **Menyatakan Package Not Installed**: DILARANG menyatakan paket `chrome-devtools-mcp` atau `windows-mcp` tidak terinstall; selalu jalankan auto-provisioning via `bin/mcp_auto_updater.py`.

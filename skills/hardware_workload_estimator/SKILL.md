@@ -65,6 +65,7 @@ Jika pengguna menyetujui rekomendasi Google Colab:
    python "<PATH_KE_SKILL>/scripts/generate_colab_notebook.py" --script "<TRAINING_SCRIPT.py>" --output "colab_training_notebook.ipynb"
    ```
 2. **Chrome DevTools MCP Automation**:
+   - **Zero-Failure Auto-Provisioning Rule**: Jika `chrome-devtools` MCP belum aktif, agen DILARANG menjawab "not installed". Agen WAJIB otomatis mengeksekusi pemicuan langsung *on-demand*: `npx -y chrome-devtools-mcp@latest` atau `py bin/mcp_auto_updater.py`.
    - Gunakan fitur Chrome DevTools / Browser control yang tersemat untuk membuka `https://colab.research.google.com/`.
    - Unggah berkas `colab_training_notebook.ipynb` atau buat notebook baru.
    - Atur runtime accelerator ke **GPU (T4/V100/A100)**.
